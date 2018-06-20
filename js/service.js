@@ -71,4 +71,5 @@ function getImgById(id) {
 
 function updateGMeme(txt) {
     gMeme.txts[0].line = txt;
+
 }
