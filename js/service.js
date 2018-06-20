@@ -57,7 +57,16 @@ function updateCurrImg(id) {
 
 }
 function getImagesForDisplay() {
-    return gImgs;
+    var imgs = [];
+    if (gFilter === '') return gImgs;
+    gImgs.forEach(function(image) {
+        var isExist = false;
+        for (let i = 0; i < image.keywords.length; i++) {
+            if(ifSubstrExist(image.keywords[i],gFilter)) isExist = true; 
+        }
+        if (isExist) imgs.push(image);
+    });
+    return imgs;
 }
 
 
@@ -71,4 +80,8 @@ function getImgById(id) {
 
 function updateGMeme(txt) {
     gMeme.txts[0].line = txt;
+}
+
+function ifSubstrExist(str,substr){
+   return str.includes(substr);
 }
