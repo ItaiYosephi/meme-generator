@@ -1,0 +1,39 @@
+body {
+    margin:0;
+    padding: 0;
+}
+
+
+.editor {
+    width : 100vw;
+    height: 100vh;
+    background: yellow;
+    position: fixed;
+    top: -100vh;
+
+    
+}
+
+.editor.show {
+    top:0;
+}
+
+.gallery li {
+    width: 100px;
+    height:100px;
+     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;    
+
+}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    border:1px solid #000000;
+}
