@@ -1,7 +1,9 @@
 'use strict'
 var elCanvas;
 var ctx;
+var gFilter;
 function init() {
+    gFilter = '';
     renderGallery()
 }
 
@@ -70,4 +72,11 @@ function drawText(txt) {
     ctx.font = '50px arial'
     ctx.fillText(txt, 50, 50)
     ctx.strokeText(txt, 150, 150)
+}
+
+function onFilterTyped(value){
+    console.log('filter value = ',value);
+    gFilter = value;
+    renderGallery();
+
 }

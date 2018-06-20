@@ -9,7 +9,7 @@
     <title>Meme Genertaor</title>
 </head>
 
-<body onload="init()">
+<body onload="init()">0
 
     <!-- HEADER -->
     <header>header</header>
@@ -25,6 +25,16 @@
         <ul class="gallery clean-list">
             <li style="background-image: url(img/1.jpg);"></li>
         </ul>
+        <div>
+            <input list="filters" oninput="onFilterTyped(this.value)">
+            <datalist id="filters">
+                <option value="happy">
+                <option value="sunday">
+                <option value="ball">
+                <option value="game">
+                <option value="life">
+            </datalist>
+        </div>
     </main>
 
     <!-- FOOTER -->
