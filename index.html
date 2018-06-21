@@ -10,15 +10,26 @@
     <title>Meme Genertaor</title>
 </head>
 
-<body onload="init()">0
+<body onload="init()">
 
     <!-- HEADER -->
-    <header>header</header>
+    <header><div class="triangle"></div></header>
 
     <!-- EDITOR -->
     <div class="editor">
         <canvas width="400" height="400"></canvas>
-        <input type="text" oninput="onTxtTyped(this.value)">
+        <div class="control-box">
+
+            <input type="text" oninput="onTxtTyped(this.value)">
+            <div class="main-control">
+                    <input type="color" class="color" value="#ff0000">
+                    <button class="btn btn-increase-font">+</button>
+                    <button class="btn btn-decrease-font">-</button>
+                    <button class="btn btn-align">A</button>
+                    <button class="btn btn-bold">B</button>
+            </div>
+            <button class="btn btn-more-options">More Options</button>
+        </div>
     </div>
 
     <!-- MAIN - GALLERY -->

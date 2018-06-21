@@ -41,6 +41,7 @@ var gImgs = [
 ];
 var gMeme = {
     selectedImgId: 5,
+    currTxtIdx: 0,
     txts: [
         {
             line: 'I never eat Falafel',
