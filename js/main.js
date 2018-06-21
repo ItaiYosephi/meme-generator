@@ -1,7 +1,7 @@
 'use strict'
 var elCanvas;
 var ctx;
-var gFilter;
+var gFilter = {};
 var gFilterList;
 var FILTER_LIST ='filter_list';
 
@@ -9,13 +9,9 @@ var FILTER_LIST ='filter_list';
 function init() {
     gFilter = '';
     gFilterList = loadFromStorage(FILTER_LIST);
-    if (!gFilterList) gFilterList =  [
-        {name:'happy',count :20},
-        {name:'sunday',count :2},
-        {name:'ball',count :7},
-        {name:'game',count :15},
-        {name:'life',count :10}];
-    renderGallery()
+    if (!gFilterList) gFilterList =  {'happy' :20,'sunday':2,'ball':7,'game':15,'life':10};
+    renderFilterList();
+    renderGallery();
 }
 
 
@@ -41,6 +37,18 @@ function renderGallery() {
     }
     elGallery.innerHTML = strHtml;
 
+}
+
+function renderFilterList(){
+    var elFilter = document.querySelector('.head-filter');
+    var strHTML = '';
+    for (let key in gFilterList) {
+        var filter = key;
+        strHTML +=`
+        <li class="filter-word ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>
+        `  
+    }
+    elFilter.innerHTML = strHTML;
 }
 
 
@@ -99,11 +107,13 @@ function onFilterTyped(value){
     console.log('filter value = ',value);
     gFilter = value;
     renderGallery();
+    renderFilterList()
 
 }
 function onFilterClick(value){
     console.log('filter value = ', value);
     gFilter = value;
     renderGallery();
+    renderFilterList()
 
 }

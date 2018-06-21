@@ -19,12 +19,24 @@ body {
 }
 
 
+.head-filter{
+    display: flex;
+}
 
 .head-filter li{
     color: red;
     cursor: pointer;
+    padding: 10vh;
+
 }
 
 canvas {
     border:1px solid #000000;
+}
+
+.clean-list {
+    list-style-type:none;
+    margin: 0;
+   
+    
 }
