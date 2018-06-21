@@ -54,7 +54,7 @@ function renderFilterList() {
         strHTMLs.push(currStrHTML);
 
     }
-    var shuffleStrHTMLs = shuffleArray (strHTMLs)
+    var shuffleStrHTMLs = shuffleStaticArray (strHTMLs)
     elFilter.innerHTML = shuffleStrHTMLs.join('');
 }
 
@@ -118,7 +118,7 @@ function renderTxts() {
 function onFilterTyped(value) {
     gFilter = value;
     renderGallery();
-    renderFilterList()
+   // renderFilterList()
 
 }
 function onFilterClick(value) {

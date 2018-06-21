@@ -53,5 +53,16 @@ function shuffleArray(array) {
     return array;
 }
 
+function shuffleStaticArray(array) {
+    var length = array.length
+    var temp = array[length -2];
+    array[length -2] = array[1];
+    array[1] = temp;
+    temp = array[length -1];
+    array[length -1] = array[length -2];
+    array[length -2] = temp;
+    
+    return array;
+}
 
 
