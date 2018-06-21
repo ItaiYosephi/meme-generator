@@ -96,3 +96,20 @@ canvas {
     color: red;
     cursor: pointer;
 }
+
+.font-size1{
+    font-size: 25px
+}
+.font-size2{
+    font-size: 20px
+}
+.font-size3{
+    font-size: 17px
+}
+.font-size4{
+    font-size: 14px
+}
+.font-size5{
+    font-size: 10px
+}
+
