@@ -2,6 +2,7 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     src: url('../fonts/impact.ttf');
 }
+
 @font-face {
     font-family: 'Lato';
     src: url('../fonts/Lato-Regular.ttf');
@@ -14,33 +15,33 @@
 }
 
 body {
-    margin:0;
+    margin: 0;
     padding: 0;
     width: 100%;
 }
 
-
-
 .clean-list {
-    list-style-type:none;
+    list-style-type: none;
     margin: 0;
 }
-h1, h3, h4, p {
-    margin:0;
+
+h1,
+h3,
+h4,
+p {
+    margin: 0;
     padding: 0;
 }
+
 a {
     text-decoration: none;
 }
 
-
-
-
 /* header */
+
 header {
     background-color: #323232;
     position: relative;
-
 }
 
 .triangle {
@@ -51,29 +52,31 @@ header {
     border-left: 52px solid transparent;
     border-right: 52px solid transparent;
     margin: 0 auto;
-    left: 0; 
-    bottom: 0; 
+    left: 0;
+    bottom: 0;
     right: 0;
-
 }
+
 nav {
     width: 370px;
     margin: 0 auto;
 }
+
 .main-menu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 0;
     margin: 0;
-
 }
+
 .portfolio {
     grid-column: 1 / 2;
 }
+
 .about {
     grid-column: 2 / 3;
-
 }
+
 .blog {
     grid-column: 4 / 5;
 }
@@ -81,6 +84,7 @@ nav {
 .get-in-touch {
     grid-column: 5 / 6;
 }
+
 .main-menu li a {
     display: flex;
     justify-content: center;
@@ -90,41 +94,40 @@ nav {
     font-weight: 700;
     text-transform: uppercase;
     color: #ffffff;
-    font-family: 'Lato'; 
+    font-family: 'Lato';
+}
 
-}
 .main-menu li a:hover {
-    color: #2eb398;;
+    color: #2eb398;
+    ;
 }
+
 .logo {
     background-image: url('../img/logo.png');
     background-position: center center;
     background-repeat: no-repeat;
     width: 64px;
-    height:55px;
+    height: 55px;
     position: absolute;
     margin: 0 auto;
     top: 10px;
-    left: 0; 
+    left: 0;
     right: 0;
-    
-
 }
 
 /* EDITOR */
+
 .editor {
-    width : 100vw;
+    width: 100vw;
     background: #404040;
     position: relative;
     top: -100vh;
     display: none;
     justify-content: space-around;
     align-items: center;
-
-    
 }
 
-.back-to-gallery{
+.back-to-gallery {
     cursor: pointer;
     display: flex;
     justify-content: space-around;
@@ -137,13 +140,13 @@ nav {
 }
 
 .editor.show {
-    top:0;
+    top: 0;
     z-index: 1;
     display: flex;
-
 }
+
 canvas {
-    border:1px solid #404040;
+    border: 1px solid #404040;
     object-fit: contain;
     cursor: pointer;
 }
@@ -156,19 +159,19 @@ canvas {
     width: 300px;
 }
 
-.download-img{
-cursor: pointer;
-display: flex;
-justify-content: space-around;
-align-items: center;
-color: aqua
+.download-img {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: aqua
 }
 
 .txt {
     background-color: #bcc0c1;
     border: 1px solid #6d706f;
 }
-    
+
 .btn {
     color: #c1c4c5;
     border: 0;
@@ -180,21 +183,24 @@ color: aqua
 
 .btn.disabled {
     background: #ecd9d969;
-    color: #a5a584;}
+    color: #a5a584;
+}
 
 .color {
     background: #5d5d5d;
-
 }
+
 .main-control {
     display: flex;
     width: 100%;
     justify-content: stretch;
 }
+
 .color {
     width: 100%;
     border: 1px solid #757575;
 }
+
 .lines-toggle {
     display: flex;
 }
@@ -202,6 +208,7 @@ color: aqua
 .pos-control {
     display: flex;
 }
+
 i {
     border: solid #c1c4c5;
     border-width: 0 2px 2px 0;
@@ -228,52 +235,69 @@ i {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+
 /* main */
 
-.gallery {
-      border-left: 1px solid #e4e9eb;
+.border-div {
+    border-left: 1px solid #e4e9eb;
     border-right: 1px solid #e4e9eb;
     margin: 0 auto;
+    position: absolute;
+    top: 7%;
+    left: 11%;
+    width: 78%;
+    z-index: -1;
+    height: 86%;
 }
+
 main {
     margin-top: 20px;
-  }
+    position: relative;
+}
 
 /* head filter */
+
 .filter-list {
     width: 100%;
 }
-.head-filter{
+
+.head-filter {
     display: flex;
     flex-wrap: wrap;
-
 }
+
 .head-filter li {
-    padding: 20px;;
+    padding: 20px;
+    ;
     color: red;
     cursor: pointer;
 }
 
-.font-size1{
+.font-size1 {
     font-size: 25px
 }
-.font-size2{
+
+.font-size2 {
     font-size: 20px
 }
-.font-size3{
+
+.font-size3 {
     font-size: 17px
 }
-.font-size4{
+
+.font-size4 {
     font-size: 14px
 }
-.font-size5{
+
+.font-size5 {
     font-size: 10px
 }
-
-
 
 /* // footer */
 
 footer {
-    background:  #2eb398;
+    background: #2eb398;
+}
+.copyright {
+    background: #222222;
 }
