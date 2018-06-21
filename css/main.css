@@ -38,9 +38,8 @@ header {
 /* EDITOR */
 .editor {
     width : 100vw;
-    height: 100vh;
     background: #404040;
-    position: fixed;
+    position: relative;
     top: -100vh;
     display: flex;
     justify-content: space-around;
@@ -48,7 +47,12 @@ header {
 
     
 }
-
+.hide {
+    display: none;
+}
+main {
+    display: none;
+}
 .editor.show {
     top:0;
     z-index: 1;
@@ -80,6 +84,11 @@ canvas {
     border: 1px solid #757575;
     background: #6b6b6b;
 }
+
+.btn.disabled {
+    background: #ecd9d969;
+    color: #a5a584;}
+
 .color {
     background: #5d5d5d;
 

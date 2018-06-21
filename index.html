@@ -17,7 +17,7 @@
         <div class="triangle"></div>
     </header>
     <!-- EDITOR -->
-    <div class="editor">
+    <div class="editor show">
         <canvas width="400" height="400" onclick="canvasClicked(event)"></canvas>
         <div class="control-box">
 
@@ -44,8 +44,9 @@
                 </button>
             </div>
             <div class="lines-toggle">
-                <div class="btn btn-prev">Prev Line</div>
-                <div class="btn btn-next">Next Line</div>
+                <div class="btn btn-prev disabled">Prev Line</div>
+                <div class="btn btn-next disabled">Next Line</div>
+                <div class="btn btn-add" onclick="onAddLine()">Add Line</div>
             </div>
             <button class="btn btn-more-options">More Options</button>
         </div>
