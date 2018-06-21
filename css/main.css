@@ -18,21 +18,7 @@ body {
     top:0;
 }
 
-.gallery li {
-    width: 100px;
-    height:100px;
-     background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;    
 
-}
-
-.clean-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
 .head-filter li{
     color: red;

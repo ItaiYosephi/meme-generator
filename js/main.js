@@ -24,9 +24,19 @@ function renderGallery() {
     var images = getImagesForDisplay();
     var elGallery = document.querySelector('.gallery')
     var strHtml = '';
+
     for (var i = 0; i < images.length; i++) {
         var currImg = images[i]
-        strHtml += `<li style="background-image: url(${currImg.url});" onClick="onImgClick(${currImg.id})"></li>`
+        strHtml += `
+        <li class="hex" >
+        <div class="hexIn">
+          <a class="hexLink" href="#" onClick="onImgClick(${currImg.id})">
+            <img src="${currImg.url}" alt="" />
+
+
+          </a>
+        </div>
+      </li>`
 
     }
     elGallery.innerHTML = strHtml;

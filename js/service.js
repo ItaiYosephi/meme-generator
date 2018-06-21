@@ -31,7 +31,7 @@ var gImgs = [
     {
         id: 6,
         url: 'img/6.jpg',
-        keywords: ['happy']
+        keywords: ['happy', 'sad']
     },
     {
         id: 7,
