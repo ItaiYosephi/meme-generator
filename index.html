@@ -16,13 +16,12 @@
     <header>
         <div class="triangle"></div>
     </header>
-
     <!-- EDITOR -->
     <div class="editor">
         <canvas width="400" height="400" onclick="canvasClicked(event)"></canvas>
         <div class="control-box">
 
-            <input type="text" oninput="onTxtTyped(this.value)">
+            <input type="text" oninput="onTxtTyped(this.value)" class="txt" placeholder="Enter your text here">
             <div class="main-control">
                 <input type="color" class="color" value="#000000" oninput="onChangeColor(this.value)">
                 <button class="btn btn-increase-font" onClick="onChangeSize('+')">+</button>

@@ -39,7 +39,7 @@ header {
 .editor {
     width : 100vw;
     height: 100vh;
-    background: yellow;
+    background: #404040;
     position: fixed;
     top: -100vh;
     display: flex;
@@ -55,23 +55,34 @@ header {
 
 }
 canvas {
-    border:1px solid #000000;
+    border:1px solid #404040;
     object-fit: contain;
 }
 
 .control-box {
     display: flex;
     flex-direction: column;
-    max-width: 200px;
     text-align: center;
+    color: #c1c4c5;
+    width: 300px;
+}
+
+.txt {
+    background-color: #bcc0c1;
+    border: 1px solid #6d706f;
 }
     
 .btn {
+    color: #c1c4c5;
     border: 0;
     cursor: pointer;
     width: 100%;
-    border: 1px solid lightblue;
-    background: #dddddd;
+    border: 1px solid #757575;
+    background: #6b6b6b;
+}
+.color {
+    background: #5d5d5d;
+
 }
 .main-control {
     display: flex;
@@ -80,7 +91,7 @@ canvas {
 }
 .color {
     width: 100%;
-    border: 1px solid lightblue;
+    border: 1px solid #757575;
 }
 .lines-toggle {
     display: flex;
@@ -90,7 +101,7 @@ canvas {
     display: flex;
 }
 i {
-    border: solid black;
+    border: solid #c1c4c5;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 2px;
