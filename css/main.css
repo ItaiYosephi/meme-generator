@@ -49,6 +49,14 @@ header {
     
 }
 
+.back-to-gallery{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: aqua
+}
+
 .editor.show {
     top:0;
     z-index: 1;

@@ -72,6 +72,11 @@ function renderEditor() {
 
 }
 
+function hideEditor(){
+    var elEditor = document.querySelector('.editor');
+    elEditor.classList.remove('show');     
+}
+
 function renderCanvas() {
     ctx = elCanvas.getContext("2d");
     var img = new Image()
