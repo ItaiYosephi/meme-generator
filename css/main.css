@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    src: url('../fonts/impact.ttf');
+}
+
 body {
     margin:0;
     padding: 0;
@@ -146,12 +151,16 @@ i {
 
 
 /* head filter */
+.filter-list {
+    width: 100%;
+}
 .head-filter{
     display: flex;
- 
+    flex-wrap: wrap;
+
 }
 .head-filter li {
-    padding: 10vh;
+    padding: 20px;;
     color: red;
     cursor: pointer;
 }
@@ -172,3 +181,10 @@ i {
     font-size: 10px
 }
 
+
+
+/* // footer */
+
+footer {
+    background:  #2eb398;
+}
