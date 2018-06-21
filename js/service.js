@@ -192,7 +192,7 @@ function makeTxt() {
         size: 40,
         align: 'center',
         color: '#000000',
-        font: 'ariel',
+        font: 'Impact',
         weight: 400,
         pos: {
             x: '',
