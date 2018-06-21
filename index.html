@@ -13,7 +13,9 @@
 <body onload="init()">
 
     <!-- HEADER -->
-    <header><div class="triangle"></div></header>
+    <header>
+        <div class="triangle"></div>
+    </header>
 
     <!-- EDITOR -->
     <div class="editor">
@@ -22,17 +24,25 @@
 
             <input type="text" oninput="onTxtTyped(this.value)">
             <div class="main-control">
-                    <input type="color" class="color" value="#000000" oninput="onChangeColor(this.value)">
-                    <button class="btn btn-increase-font" onClick="onChangeSize('+')">+</button>
-                    <button class="btn btn-decrease-font" onClick="onChangeSize('-')">-</button>
-                    <button class="btn btn-align">A</button>
-                    <button class="btn btn-bold" onClick="onChangeWeight()">B</button>
+                <input type="color" class="color" value="#000000" oninput="onChangeColor(this.value)">
+                <button class="btn btn-increase-font" onClick="onChangeSize('+')">+</button>
+                <button class="btn btn-decrease-font" onClick="onChangeSize('-')">-</button>
+                <button class="btn btn-align">A</button>
+                <button class="btn btn-bold" onClick="onChangeWeight()">B</button>
             </div>
             <div class="pos-control">
-                <button class="btn" onClick = "onChangePos('up')"><i class="arrow up"></i></button>
-                <button class="btn" onClick = "onChangePos('down')"><i class="arrow down"></i></button>
-                <button class="btn" onClick = "onChangePos('left')"><i class="arrow left"></i></button>
-                <button class="btn" onClick = "onChangePos('right')"><i class="arrow right"></i></button>
+                <button class="btn" onClick="onChangePos('up')">
+                    <i class="arrow up"></i>
+                </button>
+                <button class="btn" onClick="onChangePos('down')">
+                    <i class="arrow down"></i>
+                </button>
+                <button class="btn" onClick="onChangePos('left')">
+                    <i class="arrow left"></i>
+                </button>
+                <button class="btn" onClick="onChangePos('right')">
+                    <i class="arrow right"></i>
+                </button>
             </div>
             <div class="lines-toggle">
                 <div class="btn btn-prev">Prev Line</div>
@@ -53,10 +63,8 @@
                 <li class="filter-word" onclick="onFilterClick(this.innerHTML)">life</li> -->
             </ul>
         </div>
-        <ul id="hexGrid" class="gallery">
-        </ul>
         <div>
-            <input list="filters" oninput="onFilterTyped(this.value)">
+            <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)">
             <datalist id="filters">
                 <option value="happy">
                 <option value="sunday">
@@ -65,6 +73,8 @@
                 <option value="life">
             </datalist>
         </div>
+        <ul id="hexGrid" class="gallery">
+        </ul>
     </main>
 
     <!-- FOOTER -->

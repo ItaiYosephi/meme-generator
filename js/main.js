@@ -119,7 +119,8 @@ function onFilterTyped(value) {
 function onFilterClick(value) {
     console.log('filter value = ', value);
     gFilter = value;
-    gFilterListMap[value]++;
+    if(gFilterListMap[value]) gFilterListMap[value]++;
+    else gFilterListMap[value] = 1;
     console.log(gFilterListMap[value]);
     renderGallery();
     renderFilterList()
