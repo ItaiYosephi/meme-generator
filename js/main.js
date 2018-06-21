@@ -68,15 +68,15 @@ function onImgClick(id) {
 function toggleView() {
 
     var elEditor = document.querySelector('.editor');
-    elEditor.classList.add('show');
+    elEditor.classList.toggle('show');
     document.querySelector('main').classList.toggle('hide');
 
 }
 
-function hideEditor(){
-    var elEditor = document.querySelector('.editor');
-    elEditor.classList.remove('show');     
-}
+// function hideEditor(){
+//     var elEditor = document.querySelector('.editor');
+//     elEditor.classList.remove('show');     
+// }
 
 function renderCanvas() {
     ctx = elCanvas.getContext("2d");
