@@ -2,14 +2,14 @@
 var elCanvas;
 var ctx;
 var gFilter = {};
-var gFilterList;
+var gFilterListMap;
 var FILTER_LIST ='filter_list';
 
 
 function init() {
     gFilter = '';
-    gFilterList = loadFromStorage(FILTER_LIST);
-    if (!gFilterList) gFilterList =  {'happy' :20,'sunday':2,'ball':7,'game':15,'life':10};
+    gFilterListMap = loadFromStorage(FILTER_LIST);
+    if (!gFilterListMap) gFilterListMap =  {'happy' :20,'sunday':2,'ball':7,'game':15,'life':10};
     renderFilterList();
     renderGallery();
 }
@@ -40,15 +40,16 @@ function renderGallery() {
 }
 
 function renderFilterList(){
+    var sortedList = sortAssocObject(gFilterListMap);
     var elFilter = document.querySelector('.head-filter');
-    var strHTML = '';
-    for (let key in gFilterList) {
+    var strHTMLs = [];
+    for (let key in sortedList) {
         var filter = key;
-        strHTML +=`
-        <li class="filter-word ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>
-        `  
+        var currStrHTML =`<li class="filter-word ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>`
+        strHTMLs.push(currStrHTML);
+         
     }
-    elFilter.innerHTML = strHTML;
+    elFilter.innerHTML = strHTMLs.join('');
 }
 
 
