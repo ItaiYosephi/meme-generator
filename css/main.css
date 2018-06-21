@@ -4,39 +4,91 @@ body {
 }
 
 
+
+.clean-list {
+    list-style-type:none;
+    margin: 0;
+}
+
+
+
+
+/* header */
+header {
+    height: 63px;
+    background-color: #323232;
+    position: relative;
+
+}
+
+.triangle {
+    top: 100%;
+    position: absolute;
+    width: 0;
+    border-top: 30px solid #323232;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+    margin: 0 auto;
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+
+}
+
+/* EDITOR */
 .editor {
     width : 100vw;
     height: 100vh;
     background: yellow;
     position: fixed;
     top: -100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     
 }
 
 .editor.show {
     top:0;
-}
-
-
-.head-filter{
-    display: flex;
-}
-
-.head-filter li{
-    color: red;
-    cursor: pointer;
-    padding: 10vh;
+    z-index: 1;
 
 }
-
 canvas {
     border:1px solid #000000;
 }
 
-.clean-list {
-    list-style-type:none;
-    margin: 0;
-   
-    
+.control-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
 }
+    
+.btn {
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid lightblue;
+}
+.main-control {
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+}
+.color {
+    width: 100%;
+    border: 1px solid lightblue;
+}
+
+
+/* head filter */
+.head-filter{
+    display: flex;
+ 
+}
+.head-filter li {
+    padding: 10vh;
+    color: red;
+    cursor: pointer;
+}
+
