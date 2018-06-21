@@ -84,7 +84,6 @@ function renderCanvas() {
     img.src = getImgById(gMeme.selectedImgId).url;
     ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
     renderTxts()
-
 }
 
 function onTxtTyped(txt) {
@@ -176,4 +175,9 @@ function onAddLine() {
     debugger;
     document.querySelector('.btn-add').disabled = true;
     
+}
+
+function downloadImg(elLink) {
+    var imgContent = elCanvas.toDataURL('image/jpeg');
+    elLink.href = imgContent
 }

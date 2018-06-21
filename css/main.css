@@ -84,6 +84,14 @@ canvas {
     width: 300px;
 }
 
+.download-img{
+cursor: pointer;
+display: flex;
+justify-content: space-around;
+align-items: center;
+color: aqua
+}
+
 .txt {
     background-color: #bcc0c1;
     border: 1px solid #6d706f;
