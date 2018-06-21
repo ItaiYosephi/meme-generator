@@ -2,10 +2,21 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     src: url('../fonts/impact.ttf');
 }
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Bold.ttf');
+    font-weight: bold;
+}
 
 body {
     margin:0;
     padding: 0;
+    width: 100%;
 }
 
 
@@ -14,13 +25,19 @@ body {
     list-style-type:none;
     margin: 0;
 }
+h1, h3, h4, p {
+    margin:0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
 
 
 
 
 /* header */
 header {
-    height: 63px;
     background-color: #323232;
     position: relative;
 
@@ -37,6 +54,60 @@ header {
     left: 0; 
     bottom: 0; 
     right: 0;
+
+}
+nav {
+    width: 370px;
+    margin: 0 auto;
+}
+.main-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0;
+    margin: 0;
+
+}
+.portfolio {
+    grid-column: 1 / 2;
+}
+.about {
+    grid-column: 2 / 3;
+
+}
+.blog {
+    grid-column: 4 / 5;
+}
+
+.get-in-touch {
+    grid-column: 5 / 6;
+}
+.main-menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 63px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: 'Lato'; 
+
+}
+.main-menu li a:hover {
+    color: #2eb398;;
+}
+.logo {
+    background-image: url('../img/logo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 64px;
+    height:55px;
+    position: absolute;
+    margin: 0 auto;
+    top: 10px;
+    left: 0; 
+    right: 0;
+    
 
 }
 
@@ -74,6 +145,7 @@ header {
 canvas {
     border:1px solid #404040;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .control-box {
@@ -148,7 +220,16 @@ i {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+/* main */
 
+.gallery {
+      border-left: 1px solid #e4e9eb;
+    border-right: 1px solid #e4e9eb;
+    margin: 0 auto;
+}
+main {
+    margin-top: 20px;
+  }
 
 /* head filter */
 .filter-list {
