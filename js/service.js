@@ -43,18 +43,7 @@ var gCurrTxtIdx = 0;
 var gMeme = {
     selectedImgId: 5,
 
-    txts: [
-        {
-            line: 'I never eat Falafel',
-            size: 40,
-            align: 'center',
-            color: 'red',
-            font: 'ariel',
-            weight: 400,
-
-
-        }
-    ]
+    txts: []
 }
 
 
@@ -85,7 +74,7 @@ function getImgById(id) {
 }
 
 function updateGMeme(txt) {
-    gMeme.txts[0].line = txt;
+    gMeme.txts[gCurrTxtIdx].line = txt;
 }
 
 function ifSubstrExist(str, substr) {
@@ -104,4 +93,42 @@ function changeWeight() {
 
     gMeme.txts[gCurrTxtIdx].weight = (gMeme.txts[gCurrTxtIdx].weight === 400) ? 700 : 400;
 
+}
+
+
+function makeTxt() {
+    return {
+        line: '',
+        size: 40,
+        align: 'center',
+        color: '#000000',
+        font: 'ariel',
+        weight: 400,
+        pos: {
+            x: '',
+            y: '',
+        }
+    }
+}
+
+
+function changePos(strDir) {
+    var diff = 5;
+    switch (strDir) {
+        case 'up':
+            gMeme.txts[gCurrTxtIdx].pos.y += -diff;
+            break;
+        case 'down':
+            gMeme.txts[gCurrTxtIdx].pos.y += diff;
+            break;
+        case 'right':
+            gMeme.txts[gCurrTxtIdx].pos.x += diff;
+            break;
+
+        case 'left':
+            gMeme.txts[gCurrTxtIdx].pos.x += -diff;
+            break;
+
+
+    }
 }

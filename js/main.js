@@ -3,15 +3,18 @@ var elCanvas;
 var ctx;
 var gFilter = {};
 var gFilterListMap;
-var FILTER_LIST ='filter_list';
+var FILTER_LIST = 'filter_list';
 
 
 function init() {
+    elCanvas = document.querySelector('canvas');
+
     gFilter = '';
     gFilterListMap = loadFromStorage(FILTER_LIST);
-    if (!gFilterListMap) gFilterListMap =  {'happy' :20,'sunday':2,'ball':7,'game':15,'life':10};
+    if (!gFilterListMap) gFilterListMap = { 'happy': 20, 'sunday': 2, 'ball': 7, 'game': 15, 'life': 10 };
     renderFilterList();
     renderGallery();
+
 }
 
 
@@ -39,15 +42,15 @@ function renderGallery() {
 
 }
 
-function renderFilterList(){
+function renderFilterList() {
     var sortedList = sortAssocObject(gFilterListMap);
     var elFilter = document.querySelector('.head-filter');
     var strHTMLs = [];
     for (let key in sortedList) {
         var filter = key;
-        var currStrHTML =`<li class="filter-word ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>`
+        var currStrHTML = `<li class="filter-word ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>`
         strHTMLs.push(currStrHTML);
-         
+
     }
     elFilter.innerHTML = strHTMLs.join('');
 }
@@ -56,17 +59,17 @@ function renderFilterList(){
 function onImgClick(id) {
     updateCurrImg(id)
     renderEditor()
+    renderCanvas()
 }
 
 function renderEditor() {
 
     var elEditor = document.querySelector('.editor');
     elEditor.classList.add('show');
-    renderCanvas()
+
 }
 
 function renderCanvas() {
-    elCanvas = document.querySelector('canvas');
     ctx = elCanvas.getContext("2d");
     var img = new Image()
     img.src = getImgById(gMeme.selectedImgId).url;
@@ -75,36 +78,42 @@ function renderCanvas() {
 
 }
 
-function onTxtTyped(txt, txtIdx) {
-    updateGMeme(txt, txtIdx)
+function onTxtTyped(txt) {
+
+    updateGMeme(txt)
     renderCanvas()
 
 }
 function renderTxts() {
+    if (gMeme.txts.length === 0) {
+        gMeme.txts.push(makeTxt());
+        gMeme.txts[0].pos.x = elCanvas.width / 2
+        gMeme.txts[0].pos.y = elCanvas.width / 2
+    }
 
     for (var i = 0; i < gMeme.txts.length; i++) {
         var currTxt = gMeme.txts[i];
         ctx.fillStyle = currTxt.color;
         ctx.font = `${gMeme.txts[gCurrTxtIdx].weight} ${gMeme.txts[gCurrTxtIdx].size}px ${gMeme.txts[gCurrTxtIdx].font}`;
         ctx.textAlign = gMeme.txts[gCurrTxtIdx].align;
-        var x = elCanvas.width / 2;
-        // var y = elCanvas.height / 2;
-
-        ctx.fillText(currTxt.line, x, 50)
+        var x = currTxt.pos.x;
+        var y = currTxt.pos.y;
+        ctx.fillText(currTxt.line, x, y)
         // ctx.strokeText(currTxt.line, 150, 150)
 
     }
+
 }
 
 
 
-function onFilterTyped(value){
+function onFilterTyped(value) {
     gFilter = value;
     renderGallery();
     renderFilterList()
 
 }
-function onFilterClick(value){
+function onFilterClick(value) {
     console.log('filter value = ', value);
     gFilter = value;
     renderGallery();
@@ -116,7 +125,7 @@ function onChangeColor(colorStr) {
     updateColor(colorStr)
     renderCanvas();
 
-    
+
 }
 
 function onChangeSize(opStr) {
@@ -132,4 +141,19 @@ function onChangeWeight() {
     changeWeight()
     renderCanvas();
 
+}
+
+function onChangePos(strDir) {
+  changePos(strDir)
+  renderCanvas();
+
+
+}
+
+function canvasClicked(ev) {
+    console.log(ev);
+    gMeme.txts[gCurrTxtIdx].pos.x = ev.offsetX;
+    gMeme.txts[gCurrTxtIdx].pos.y = ev.offsetY;
+    renderCanvas();
+    
 }
