@@ -38,9 +38,8 @@ header {
 /* EDITOR */
 .editor {
     width : 100vw;
-    height: 100vh;
     background: #404040;
-    position: fixed;
+    position: relative;
     top: -100vh;
     display: flex;
     justify-content: space-around;
@@ -48,6 +47,7 @@ header {
 
     
 }
+<<<<<<< HEAD
 
 .back-to-gallery{
     cursor: pointer;
@@ -57,6 +57,14 @@ header {
     color: aqua
 }
 
+=======
+.hide {
+    display: none;
+}
+main {
+    display: none;
+}
+>>>>>>> 9a13a548a607f29d5363f717fa2ef8dfd04adaa6
 .editor.show {
     top:0;
     z-index: 1;
@@ -88,6 +96,11 @@ canvas {
     border: 1px solid #757575;
     background: #6b6b6b;
 }
+
+.btn.disabled {
+    background: #ecd9d969;
+    color: #a5a584;}
+
 .color {
     background: #5d5d5d;
 

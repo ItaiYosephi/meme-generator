@@ -61,14 +61,15 @@ function renderFilterList() {
 
 function onImgClick(id) {
     updateCurrImg(id)
-    renderEditor()
+    toggleView()
     renderCanvas()
 }
 
-function renderEditor() {
+function toggleView() {
 
     var elEditor = document.querySelector('.editor');
     elEditor.classList.add('show');
+    document.querySelector('main').classList.toggle('hide');
 
 }
 
@@ -167,5 +168,12 @@ function canvasClicked(ev) {
     gMeme.txts[gCurrTxtIdx].pos.x = ev.offsetX;
     gMeme.txts[gCurrTxtIdx].pos.y = ev.offsetY;
     renderCanvas();
+    
+}
+
+function onAddLine() {
+    console.log('clicked');
+    debugger;
+    document.querySelector('.btn-add').disabled = true;
     
 }

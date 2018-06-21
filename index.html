@@ -17,8 +17,9 @@
         <div class="triangle"></div>
     </header>
     <!-- EDITOR -->
-    <div class="editor">
-        <div class="back-to-gallery" onclick="hideEditor()" >Back To Gallery</div>
+
+    <div class="editor show">
+        <div class="back-to-gallery" onclick="hideEditor()">Back To Gallery</div>
         <canvas width="400" height="400" onclick="canvasClicked(event)"></canvas>
         <div class="control-box">
 
@@ -45,8 +46,9 @@
                 </button>
             </div>
             <div class="lines-toggle">
-                <div class="btn btn-prev">Prev Line</div>
-                <div class="btn btn-next">Next Line</div>
+                <div class="btn btn-prev disabled">Prev Line</div>
+                <div class="btn btn-next disabled">Next Line</div>
+                <div class="btn btn-add" onclick="onAddLine()">Add Line</div>
             </div>
             <button class="btn btn-more-options">More Options</button>
         </div>
@@ -67,10 +69,10 @@
             <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)">
             <datalist id="filters">
                 <option value="happy">
-                <option value="sunday">
-                <option value="ball">
-                <option value="game">
-                <option value="life">
+                    <option value="sunday">
+                        <option value="ball">
+                            <option value="game">
+                                <option value="life">
             </datalist>
         </div>
         <ul id="hexGrid" class="gallery">
