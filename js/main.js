@@ -2,8 +2,19 @@
 var elCanvas;
 var ctx;
 var gFilter;
+var gFilterList;
+var FILTER_LIST ='filter_list';
+
+
 function init() {
     gFilter = '';
+    gFilterList = loadFromStorage(FILTER_LIST);
+    if (!gFilterList) gFilterList =  [
+        {name:'happy',count :20},
+        {name:'sunday',count :2},
+        {name:'ball',count :7},
+        {name:'game',count :15},
+        {name:'life',count :10}];
     renderGallery()
 }
 
@@ -76,6 +87,12 @@ function drawText(txt) {
 
 function onFilterTyped(value){
     console.log('filter value = ',value);
+    gFilter = value;
+    renderGallery();
+
+}
+function onFilterClick(value){
+    console.log('filter value = ', value);
     gFilter = value;
     renderGallery();
 
