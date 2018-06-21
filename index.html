@@ -22,11 +22,15 @@
 
             <input type="text" oninput="onTxtTyped(this.value)">
             <div class="main-control">
-                    <input type="color" class="color" value="#ff0000">
-                    <button class="btn btn-increase-font">+</button>
-                    <button class="btn btn-decrease-font">-</button>
+                    <input type="color" class="color" value="#ff0000" oninput="onChangeColor(this.value)">
+                    <button class="btn btn-increase-font" onclick="onChangeSize('+')">+</button>
+                    <button class="btn btn-decrease-font" onclick="onChangeSize('-')">-</button>
                     <button class="btn btn-align">A</button>
-                    <button class="btn btn-bold">B</button>
+                    <button class="btn btn-bold" onclick="onChangeWeight()">B</button>
+            </div>
+            <div class="lines-toggle">
+                <div class="btn btn-prev">Prev Line</div>
+                <div class="btn btn-next">Next Line</div>
             </div>
             <button class="btn btn-more-options">More Options</button>
         </div>

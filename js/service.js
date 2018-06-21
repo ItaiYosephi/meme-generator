@@ -39,16 +39,19 @@ var gImgs = [
         keywords: ['happy']
     }
 ];
+var gCurrTxtIdx = 0;
 var gMeme = {
     selectedImgId: 5,
-    currTxtIdx: 0,
+
     txts: [
         {
             line: 'I never eat Falafel',
-            size: 20, 
-            align: 'left',
+            size: 40,
+            align: 'center',
             color: 'red',
-            
+            font: 'ariel',
+            weight: 400,
+
 
         }
     ]
@@ -62,10 +65,10 @@ function updateCurrImg(id) {
 function getImagesForDisplay() {
     var imgs = [];
     if (gFilter === '') return gImgs;
-    gImgs.forEach(function(image) {
+    gImgs.forEach(function (image) {
         var isExist = false;
         for (let i = 0; i < image.keywords.length; i++) {
-            if(ifSubstrExist(image.keywords[i],gFilter)) isExist = true; 
+            if (ifSubstrExist(image.keywords[i], gFilter)) isExist = true;
         }
         if (isExist) imgs.push(image);
     });
@@ -85,6 +88,20 @@ function updateGMeme(txt) {
     gMeme.txts[0].line = txt;
 }
 
-function ifSubstrExist(str,substr){
-   return str.includes(substr);
+function ifSubstrExist(str, substr) {
+    return str.includes(substr);
+}
+
+function updateColor(colorStr) {
+    gMeme.txts[gCurrTxtIdx].color = colorStr;
+
+}
+function changeSize(diff) {
+    gMeme.txts[gCurrTxtIdx].size += diff;
+}
+
+function changeWeight() {
+
+    gMeme.txts[gCurrTxtIdx].weight = (gMeme.txts[gCurrTxtIdx].weight === 400) ? 700 : 400;
+
 }

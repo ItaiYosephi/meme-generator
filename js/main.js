@@ -81,11 +81,12 @@ function onTxtTyped(txt, txtIdx) {
 
 }
 function renderTxts() {
+
     for (var i = 0; i < gMeme.txts.length; i++) {
         var currTxt = gMeme.txts[i];
-        ctx.fillStyle = 'red'
-        ctx.font = '50px arial'
-        ctx.textAlign = 'center';
+        ctx.fillStyle = currTxt.color;
+        ctx.font = `${gMeme.txts[gCurrTxtIdx].weight} ${gMeme.txts[gCurrTxtIdx].size}px ${gMeme.txts[gCurrTxtIdx].font}`;
+        ctx.textAlign = gMeme.txts[gCurrTxtIdx].align;
         var x = elCanvas.width / 2;
         // var y = elCanvas.height / 2;
 
@@ -96,16 +97,8 @@ function renderTxts() {
 }
 
 
-function drawText(txt) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.fillStyle = 'red'
-    ctx.font = '50px arial'
-    ctx.fillText(txt, 50, 50)
-    ctx.strokeText(txt, 150, 150)
-}
 
 function onFilterTyped(value){
-    console.log('filter value = ',value);
     gFilter = value;
     renderGallery();
     renderFilterList()
@@ -116,5 +109,27 @@ function onFilterClick(value){
     gFilter = value;
     renderGallery();
     renderFilterList()
+
+}
+
+function onChangeColor(colorStr) {
+    updateColor(colorStr)
+    renderCanvas();
+
+    
+}
+
+function onChangeSize(opStr) {
+    var diff = 3;
+    if (opStr === '-') {
+        diff *= -1;
+    }
+    changeSize(diff);
+    renderCanvas();
+}
+
+function onChangeWeight() {
+    changeWeight()
+    renderCanvas();
 
 }
