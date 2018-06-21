@@ -6,37 +6,37 @@ var gImgs = [
     {
         id: 1,
         url: 'img/1.jpg',
-        keywords: ['happy']
+        keywords: ['happy','flower','girl','mount']
     },
     {
         id: 2,
         url: 'img/2.jpg',
-        keywords: ['happy']
+        keywords: ['usa','ungry','flag','president','tramp']
     },
     {
         id: 3,
         url: 'img/3.jpg',
-        keywords: ['happy']
+        keywords: ['happy','dog','puppy','kiss','qute']
     },
     {
         id: 4,
         url: 'img/4.jpg',
-        keywords: ['happy']
+        keywords: ['happy','dog','baby','qute','sleep']
     },
     {
         id: 5,
         url: 'img/5.jpg',
-        keywords: ['happy']
+        keywords: ['baby','boy','angry','sea','beach']
     },
     {
         id: 6,
         url: 'img/6.jpg',
-        keywords: ['happy', 'sad']
+        keywords: ['cat', 'qute','laptop','sleep']
     },
     {
         id: 7,
         url: 'img/7.jpg',
-        keywords: ['happy']
+        keywords: ['happy','toystory','movie','animate']
     },
     {
         id: 8,
@@ -46,12 +46,12 @@ var gImgs = [
     {
         id: 9,
         url: 'img/9.jpg',
-        keywords: ['happy']
+        keywords: ['happy','boy','qute','green']
     },
     {
         id: 10,
         url: 'img/10.jpg',
-        keywords: ['happy']
+        keywords: ['happy','Haim','יצאתצצדיק','tv','israel']
     },
     {
         id: 11,
