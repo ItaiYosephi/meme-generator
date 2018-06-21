@@ -44,15 +44,18 @@ function renderGallery() {
 
 function renderFilterList() {
     var sortedList = sortAssocObject(gFilterListMap);
+    var cuttedList = cutObjectbyLenght(sortedList,5);
     var elFilter = document.querySelector('.head-filter');
     var strHTMLs = [];
-    for (let key in sortedList) {
+    var i = 1;
+    for (let key in cuttedList) {
         var filter = key;
-        var currStrHTML = `<li class="filter-word ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>`
+        var currStrHTML =`<li class="filter-word font-size${i++} ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>`
         strHTMLs.push(currStrHTML);
 
     }
-    elFilter.innerHTML = strHTMLs.join('');
+    var shuffleStrHTMLs = shuffleArray (strHTMLs)
+    elFilter.innerHTML = shuffleStrHTMLs.join('');
 }
 
 
@@ -116,8 +119,11 @@ function onFilterTyped(value) {
 function onFilterClick(value) {
     console.log('filter value = ', value);
     gFilter = value;
+    gFilterListMap[value]++;
+    console.log(gFilterListMap[value]);
     renderGallery();
     renderFilterList()
+    saveToStorage(FILTER_LIST, gFilterListMap);
 
 }
 
