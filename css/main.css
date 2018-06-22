@@ -13,6 +13,9 @@
     src: url('../fonts/Lato-Bold.ttf');
     font-weight: bold;
 }
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -118,7 +121,7 @@ nav {
 /* EDITOR */
 
 .editor {
-    width: 100vw;
+    width: 100%;
     background: #404040;
     position: relative;
     top: -100vh;
@@ -143,12 +146,14 @@ nav {
     top: 0;
     z-index: 1;
     display: flex;
+    flex-wrap: wrap;
 }
 
 canvas {
     border: 1px solid #404040;
-    object-fit: contain;
     cursor: pointer;
+    max-width: 100%;
+    height: auto;
 }
 
 .control-box {
@@ -156,7 +161,8 @@ canvas {
     flex-direction: column;
     text-align: center;
     color: #c1c4c5;
-    width: 300px;
+    flex: 0 0 300px; 
+    max-width: 100%;
 }
 
 .download-img {
@@ -298,6 +304,7 @@ main {
 footer {
     background: #2eb398;
 }
+
 .copyright {
     background: #222222;
 }
