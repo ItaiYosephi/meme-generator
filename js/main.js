@@ -110,8 +110,10 @@ function renderTxts() {
     for (var i = 0; i < gMeme.txts.length; i++) {
         var currTxt = gMeme.txts[i];
         ctx.fillStyle = currTxt.color;
-        ctx.font = `${gMeme.txts[gCurrTxtIdx].weight} ${gMeme.txts[gCurrTxtIdx].size}px ${gMeme.txts[gCurrTxtIdx].font}`;
-        ctx.textAlign = gMeme.txts[gCurrTxtIdx].align;
+        ctx.font = `${gMeme.txts[i].weight} ${gMeme.txts[i].size}px ${gMeme.txts[i].font}`;
+        ctx.textAlign = gMeme.txts[i].align;
+        // ctx.font = `${gMeme.txts[gCurrTxtIdx].weight} ${gMeme.txts[gCurrTxtIdx].size}px ${gMeme.txts[gCurrTxtIdx].font}`;
+        // ctx.textAlign = gMeme.txts[gCurrTxtIdx].align;
         var x = currTxt.pos.x;
         var y = currTxt.pos.y;
         ctx.fillText(currTxt.line, x, y)
