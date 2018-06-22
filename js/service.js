@@ -234,7 +234,7 @@ function makeTxt() {
         font: 'Impact',
         weight: 400,
         pos: {
-            x: gMeme.txts[0].pos.x = elCanvas.width / 2,
+            x: elCanvas.width / 2,
             y:  elCanvas.width / 2,
         }
     }
