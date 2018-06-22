@@ -16,10 +16,18 @@
     <header>
         <nav>
             <ul class="main-menu clean-list">
-                <li class="portfolio"><a href="#">Portfolio</a></li>
-                <li class="about"><a href="#">About</a></li>
-                <li class="blog"><a href="#">Blog</a></li>
-                <li class="get-in-touch"><a href="#">Get in Touch</a></li>
+                <li class="portfolio">
+                    <a href="#">Portfolio</a>
+                </li>
+                <li class="about">
+                    <a href="#">About</a>
+                </li>
+                <li class="blog">
+                    <a href="#">Blog</a>
+                </li>
+                <li class="get-in-touch">
+                    <a href="#">Get in Touch</a>
+                </li>
 
             </ul>
         </nav>
@@ -30,9 +38,9 @@
 
     <div class="editor">
         <div class="back-to-gallery" onclick="toggleView()">Back To Gallery</div>
-
-        <canvas width="400" height="400" onclick="canvasClicked(event)"></canvas>
-
+        <div class="canvas-container">
+            <canvas width="400" height="400" onclick="canvasClicked(event)"></canvas>
+        </div>
         <div class="control-box">
 
             <input type="text" oninput="onTxtTyped(this.value)" class="txt" placeholder="Enter your text here">
@@ -64,8 +72,8 @@
             </div>
             <button class="btn btn-more-options">More Options</button>
         </div>
-        <div>
-            <a class="download-img" href="#" onclick="downloadImg(this)" download="my-img.jpg" >
+        <div class="download-btn" >
+            <a class="download-img" href="#" onclick="downloadImg(this)" download="my-img.jpg">
                 Download as jpeg
             </a>
         </div>
@@ -73,40 +81,42 @@
 
     <!-- MAIN - GALLERY -->
     <main>
-            <div class="border-div"></div>
+        <div class="border-div"></div>
 
-            <div>
-                    <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)">
-                    <datalist id="filters">
-                        <option value="happy">
-                            <option value="man">
-                                <option value="qute">
-                                    <option value="usa">
-                                        <option value="movie">
-                    </datalist>
-                </div>
+        <div>
+            <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)">
+            <datalist id="filters">
+                <option value="happy">
+                    <option value="man">
+                        <option value="qute">
+                            <option value="usa">
+                                <option value="movie">
+            </datalist>
+        </div>
         <div class="filters-list">
             <ul class="head-filter clean-list">
-   
+
             </ul>
         </div>
-        
+
         <ul id="" class="gallery hexGrid">
         </ul>
     </main>
 
     <!-- FOOTER -->
     <footer>
-  
-            <h3>Smith Anderson</h3>
-            <h4>Web Designer</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sint quod esse fuga eveniet omnis, 
-                necessitatibus facere fugit vitae unde commodi harum nam expedita optio nobis similique cupiditate. Atque, praesentium.
-            </p>
+
+        <h3>Smith Anderson</h3>
+        <h4>Web Designer</h4>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, sint quod esse fuga eveniet omnis, necessitatibus facere
+            fugit vitae unde commodi harum nam expedita optio nobis similique cupiditate. Atque, praesentium.
+        </p>
         </div>
         <div class="contact"></div>
-        <div class="copyright"><p>&copy; Copyright 2013</p></div>
+        <div class="copyright">
+            <p>&copy; Copyright 2013</p>
+        </div>
     </footer>
     <script src="js/utils.js"></script>
     <script src="js/upload-service.js"></script>
