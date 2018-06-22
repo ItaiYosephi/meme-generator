@@ -201,10 +201,16 @@ function movePrevTxtIdx(){
     if(getNumOfTxt() && gCurrTxtIdx > getNumOfTxt()) gCurrTxtIdx --
 }
 
+function initTxtBox(){
+    var txt = document.querySelector('.txt');
+    txt.txt = '';
+}
+
 function addTxtLine(){
     gMeme.txts.push(makeTxt());
     gMeme.txts[0].pos.x = elCanvas.width / 2;
     gMeme.txts[0].pos.y = elCanvas.width / 2;
+    initTxtBox();
     moveNextTxtIdx();
 }
 
