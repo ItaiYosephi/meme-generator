@@ -112,8 +112,7 @@ function renderTxts() {
     }
 
 }
-
-
+ 
 
 function onFilterTyped(value) {
     gFilter = value;
@@ -172,8 +171,10 @@ function canvasClicked(ev) {
 
 function onAddLine() {
     console.log('clicked');
-    debugger;
-    document.querySelector('.btn-add').disabled = true;
+    addTxtLine();
+    renderCanvas();
+   // debugger;
+   // document.querySelector('.btn-add').disabled = true;
     
 }
 

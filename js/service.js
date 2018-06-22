@@ -185,6 +185,30 @@ function changeWeight() {
 
 }
 
+function changeCurrTxtIdx(txtID){
+    gCurrTxtIdx = txtID;
+}
+
+function getNumOfTxt(){
+    return gMeme.txts.length;
+}
+
+function moveNextTxtIdx(){
+    if(gCurrTxtIdx < getNumOfTxt()) gCurrTxtIdx ++
+}
+
+function movePrevTxtIdx(){
+    if(getNumOfTxt() && gCurrTxtIdx > getNumOfTxt()) gCurrTxtIdx --
+}
+
+function addTxtLine(){
+    gMeme.txts.push(makeTxt());
+    gMeme.txts[0].pos.x = elCanvas.width / 2;
+    gMeme.txts[0].pos.y = elCanvas.width / 2;
+    moveNextTxtIdx();
+}
+
+
 
 function makeTxt() {
     return {
