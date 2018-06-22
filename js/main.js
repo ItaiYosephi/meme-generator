@@ -11,7 +11,7 @@ function init() {
 
     gFilter = '';
     gFilterListMap = loadFromStorage(FILTER_LIST);
-    if (!gFilterListMap) gFilterListMap = { 'happy': 20, 'sunday': 2, 'ball': 7, 'game': 15, 'life': 10 };
+    if (!gFilterListMap) gFilterListMap = { 'happy': 20, 'qute': 2, 'ball': 7, 'man': 15, 'usa': 10 };
     renderFilterList();
     renderGallery();
 
@@ -120,8 +120,7 @@ function renderTxts() {
     }
 
 }
-
-
+ 
 
 function onFilterTyped(value) {
     gFilter = value;
@@ -180,9 +179,17 @@ function canvasClicked(ev) {
 
 function onAddLine() {
     console.log('clicked');
+<<<<<<< HEAD
     debugger;
     document.querySelector('.btn-add').disabled = true;
 
+=======
+    addTxtLine();
+    renderCanvas();
+   // debugger;
+   // document.querySelector('.btn-add').disabled = true;
+    
+>>>>>>> 9b318e96b13c3a8151aa341dc711444814082d93
 }
 
 function downloadImg(elLink) {
