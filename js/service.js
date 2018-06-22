@@ -217,7 +217,7 @@ function addTxtLine(){
     gMeme.txts.push(makeTxt());
     changeCurrTxtIdx(getNumOfTxt() -1);
     //gMeme.txts[gCurrTxtIdx].pos.x = elCanvas.width / 2;
-   // gMeme.txts[gCurrTxtIdx].pos.y = elCanvas.width / 2;
+   // gMeme.txts[gCurrTxtIdx].pos.y = elCanvas.height / 2;
     gMeme.txts[gCurrTxtIdx].pos.x = gMeme.txts[gCurrTxtIdx - 1].pos.x;
     gMeme.txts[gCurrTxtIdx].pos.y = gMeme.txts[gCurrTxtIdx - 1].pos.y +10;
     updateTxtBox();
@@ -234,8 +234,8 @@ function makeTxt() {
         font: 'Impact',
         weight: 400,
         pos: {
-            x: '',
-            y: '',
+            x: elCanvas.width / 2,
+            y:  elCanvas.height / 2,
         }
     }
 }
