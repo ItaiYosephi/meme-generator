@@ -194,24 +194,33 @@ function getNumOfTxt(){
 }
 
 function moveNextTxtIdx(){
-    if(gCurrTxtIdx < getNumOfTxt()) gCurrTxtIdx ++
+    if(gCurrTxtIdx < getNumOfTxt() -1){
+        gCurrTxtIdx ++
+        updateTxtBox(gMeme.txts[gCurrTxtIdx].line)
+    }
 }
 
 function movePrevTxtIdx(){
-    if(getNumOfTxt() && gCurrTxtIdx > getNumOfTxt()) gCurrTxtIdx --
+    if(gCurrTxtIdx){
+        gCurrTxtIdx --
+        updateTxtBox(gMeme.txts[gCurrTxtIdx].line)
+    } 
 }
 
-function initTxtBox(){
+function updateTxtBox(txt){
+    var text = (txt)? txt:'';
     var txt = document.querySelector('.txt');
-    txt.txt = '';
+    txt.value = text;
 }
 
 function addTxtLine(){
     gMeme.txts.push(makeTxt());
-    gMeme.txts[0].pos.x = elCanvas.width / 2;
-    gMeme.txts[0].pos.y = elCanvas.width / 2;
-    initTxtBox();
     moveNextTxtIdx();
+    //gMeme.txts[gCurrTxtIdx].pos.x = elCanvas.width / 2;
+   // gMeme.txts[gCurrTxtIdx].pos.y = elCanvas.width / 2;
+    gMeme.txts[gCurrTxtIdx].pos.x = gMeme.txts[gCurrTxtIdx - 1].pos.x;
+    gMeme.txts[gCurrTxtIdx].pos.y = gMeme.txts[gCurrTxtIdx - 1].pos.y +10;
+    updateTxtBox();
 }
 
 

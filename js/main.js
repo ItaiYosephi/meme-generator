@@ -166,8 +166,17 @@ function onChangePos(strDir) {
     changePos(strDir)
     renderCanvas();
 
-
 }
+
+function onNextLineTxt(){
+    moveNextTxtIdx();
+}
+
+function onPrevLineTxt(){
+    movePrevTxtIdx();
+}
+
+
 
 function canvasClicked(ev) {
     console.log(ev);
@@ -179,17 +188,11 @@ function canvasClicked(ev) {
 
 function onAddLine() {
     console.log('clicked');
-<<<<<<< HEAD
-    debugger;
-    document.querySelector('.btn-add').disabled = true;
-
-=======
     addTxtLine();
     renderCanvas();
    // debugger;
    // document.querySelector('.btn-add').disabled = true;
     
->>>>>>> 9b318e96b13c3a8151aa341dc711444814082d93
 }
 
 function downloadImg(elLink) {
