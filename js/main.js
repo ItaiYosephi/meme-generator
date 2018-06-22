@@ -166,8 +166,17 @@ function onChangePos(strDir) {
     changePos(strDir)
     renderCanvas();
 
-
 }
+
+function onNextLineTxt(){
+    moveNextTxtIdx();
+}
+
+function onPrevLineTxt(){
+    movePrevTxtIdx();
+}
+
+
 
 function canvasClicked(ev) {
     console.log(ev);
