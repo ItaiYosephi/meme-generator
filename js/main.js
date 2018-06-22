@@ -8,7 +8,6 @@ var FILTER_LIST = 'filter_list';
 
 function init() {
     elCanvas = document.querySelector('canvas');
-
     gFilter = '';
     gFilterListMap = loadFromStorage(FILTER_LIST);
     if (!gFilterListMap) gFilterListMap = { 'happy': 20, 'qute': 2, 'ball': 7, 'man': 15, 'usa': 10 };
@@ -103,8 +102,7 @@ function onTxtTyped(txt) {
 function renderTxts() {
     if (gMeme.txts.length === 0) {
         gMeme.txts.push(makeTxt());
-        gMeme.txts[0].pos.x = elCanvas.width / 2
-        gMeme.txts[0].pos.y = elCanvas.width / 2
+
     }
 
     for (var i = 0; i < gMeme.txts.length; i++) {
