@@ -44,17 +44,17 @@ function renderGallery() {
 
 function renderFilterList() {
     var sortedList = sortAssocObject(gFilterListMap);
-    var cuttedList = cutObjectbyLenght(sortedList,5);
+    var cuttedList = cutObjectbyLenght(sortedList, 5);
     var elFilter = document.querySelector('.head-filter');
     var strHTMLs = [];
     var i = 1;
     for (let key in cuttedList) {
         var filter = key;
-        var currStrHTML =`<li class="filter-word font-size${i++} ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>`
+        var currStrHTML = `<li class="filter-word font-size${i++} ${key}" onclick="onFilterClick(this.innerHTML)">${key}</li>`
         strHTMLs.push(currStrHTML);
 
     }
-    var shuffleStrHTMLs = shuffleStaticArray (strHTMLs)
+    var shuffleStrHTMLs = shuffleStaticArray(strHTMLs)
     elFilter.innerHTML = shuffleStrHTMLs.join('');
 }
 
@@ -79,11 +79,19 @@ function toggleView() {
 // }
 
 function renderCanvas() {
+
     ctx = elCanvas.getContext("2d");
     var img = new Image()
+    img.onload = function () {
+        elCanvas.width = img.naturalWidth
+        elCanvas.height = img.naturalHeight
+        ctx.drawImage(img, 0, 0);
+        renderTxts()
+
+    }
+
     img.src = getImgById(gMeme.selectedImgId).url;
-    ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
-    renderTxts()
+    // ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
 }
 
 function onTxtTyped(txt) {
@@ -118,13 +126,13 @@ function renderTxts() {
 function onFilterTyped(value) {
     gFilter = value;
     renderGallery();
-   // renderFilterList()
+    // renderFilterList()
 
 }
 function onFilterClick(value) {
     console.log('filter value = ', value);
     gFilter = value;
-    if(gFilterListMap[value]) gFilterListMap[value]++;
+    if (gFilterListMap[value]) gFilterListMap[value]++;
     else gFilterListMap[value] = 1;
     console.log(gFilterListMap[value]);
     renderGallery();
@@ -156,8 +164,8 @@ function onChangeWeight() {
 }
 
 function onChangePos(strDir) {
-  changePos(strDir)
-  renderCanvas();
+    changePos(strDir)
+    renderCanvas();
 
 
 }
@@ -167,17 +175,18 @@ function canvasClicked(ev) {
     gMeme.txts[gCurrTxtIdx].pos.x = ev.offsetX;
     gMeme.txts[gCurrTxtIdx].pos.y = ev.offsetY;
     renderCanvas();
-    
+
 }
 
 function onAddLine() {
     console.log('clicked');
     debugger;
     document.querySelector('.btn-add').disabled = true;
-    
+
 }
 
 function downloadImg(elLink) {
+    console.log(elCanvas)
     var imgContent = elCanvas.toDataURL('image/jpeg');
     elLink.href = imgContent
 }
