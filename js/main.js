@@ -11,7 +11,7 @@ function init() {
 
     gFilter = '';
     gFilterListMap = loadFromStorage(FILTER_LIST);
-    if (!gFilterListMap) gFilterListMap = { 'happy': 20, 'sunday': 2, 'ball': 7, 'game': 15, 'life': 10 };
+    if (!gFilterListMap) gFilterListMap = { 'happy': 20, 'qute': 2, 'ball': 7, 'man': 15, 'usa': 10 };
     renderFilterList();
     renderGallery();
 
