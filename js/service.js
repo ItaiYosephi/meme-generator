@@ -51,72 +51,72 @@ var gImgs = [
     {
         id: 10,
         url: 'img/10.jpg',
-        keywords: ['happy','Haim','יצאתצצדיק','tv','israel']
+        keywords: ['happy','Haim','יצאתצצדיק','tv','israel','man']
     },
     {
         id: 11,
         url: 'img/11.jpg',
-        keywords: ['happy']
+        keywords: ['what','eyes','shout','man']
     },
     {
         id: 12,
         url: 'img/12.jpg',
-        keywords: ['happy']
+        keywords: ['man','hair','history']
     },
     {
         id: 13,
         url: 'img/13.jpg',
-        keywords: ['happy']
+        keywords: ['man','hands','movie','baldness']
     },
     {
         id: 14,
         url: 'img/14.jpg',
-        keywords: ['happy']
+        keywords: ['happy','boys','children','black','afrika','dancing']
     },
     {
         id: 15,
         url: 'img/15.jpg',
-        keywords: ['happy']
+        keywords: ['usa','ungry','finger','president','tramp','man']
     },
     {
         id: 16,
         url: 'img/16.jpg',
-        keywords: ['happy']
+        keywords: ['happy','black','boy','qute','eyes']
     },
     {
         id: 17,
         url: 'img/17.jpg',
-        keywords: ['happy']
+        keywords: ['dog','qute','flor','animal']
     },
     {
         id: 18,
         url: 'img/18.jpg',
-        keywords: ['happy']
+        keywords: ['happy','black','man','obama','usa','president','democrat']
     },
     {
         id: 19,
         url: 'img/19.jpg',
-        keywords: ['happy']
+        keywords: ['nba','basketball','fight','celtics','pirse','lackers','worldpeasce']
     },
     {
         id: 20,
         url: 'img/20.jpg',
-        keywords: ['happy']
+        keywords: ['happy','movie','decaprio','glass','whine']
     },
     {
         id: 21,
         url: 'img/21.jpg',
-        keywords: ['happy']
+        keywords: ['movie','man','matrix','black','glasses']
     },
     {
         id: 22,
         url: 'img/22.jpg',
-        keywords: ['happy']
+        keywords: ['man','movie']
     },
     {
         id: 23,
         url: 'img/23.jpg',
-        keywords: ['happy']
+        keywords: ['singer','shouting','red','woman']
     },
     {
         id: 24,
@@ -126,7 +126,7 @@ var gImgs = [
     {
         id: 25,
         url: 'img/25.jpg',
-        keywords: ['happy']
+        keywords: ['movie','man','starts']
     },
 ];
 var gCurrTxtIdx = 0;
