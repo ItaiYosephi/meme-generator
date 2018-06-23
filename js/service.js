@@ -228,6 +228,9 @@ function addTxtLine(){
     gMeme.txts[gCurrTxtIdx].pos.y = gMeme.txts[gCurrTxtIdx - 1].pos.y +10;
     updateTxtBox();
 }
+function removeTxtLine(){
+    
+}
 
 
 
