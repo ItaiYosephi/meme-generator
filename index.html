@@ -87,41 +87,50 @@
             </div>
 
             <div class="editor-right flex">
+
                 <div class="control-box">
-                    <input type="text" oninput="onTxtTyped(this.value)" class="txt" placeholder="Enter your text here">
-                    <div class="main-control">
-                        <input type="color" class="color" value="#000000" oninput="onChangeColor(this.value)">
-                        <button class="btn btn-increase-font" onClick="onChangeSize('+')">+</button>
-                        <button class="btn btn-decrease-font" onClick="onChangeSize('-')">-</button>
-                        <button class="btn btn-align">A
+                    <div class="row">
+                        <input type="text" oninput="onTxtTyped(this.value)" class="txt col-12" placeholder="Enter your text here">
+                    </div>
+
+                    <div class="row main-control">
+                        <input type="color" class="color col" value="#000000" oninput="onChangeColor(this.value)">
+                        <button class="btn btn-increase-font col" onClick="onChangeSize('+')">+</button>
+                        <button class="btn btn-decrease-font col" onClick="onChangeSize('-')">-</button>
+                        <button class="btn btn-align col">A
                             <ul class="clean-list align">
                                 <li>center</li>
                                 <li>left</li>
                                 <li>right</li>
                             </ul>
                         </button>
-                        <button class="btn btn-bold" onClick="onChangeWeight()">B</button>
+                        <button class="btn btn-bold col" onClick="onChangeWeight()">B</button>
                     </div>
-                    <div class="pos-control">
-                        <button class="btn" onClick="onChangePos('up')">
-                            <i class="arrow up"></i>
+
+                    <div class="row pos-control">
+                        <button class="btn col-3" onClick="onChangePos('up')">
+                            <i class="fas fa-angle-up fa-lg"></i>
                         </button>
-                        <button class="btn" onClick="onChangePos('down')">
-                            <i class="arrow down"></i>
+                        <button class="btn col-3" onClick="onChangePos('down')">
+                            <i class="fas fa-angle-down fa-lg"></i>
                         </button>
-                        <button class="btn" onClick="onChangePos('left')">
-                            <i class="arrow left"></i>
+                        <button class="btn col-3" onClick="onChangePos('left')">
+                            <i class="fas fa-angle-left fa-lg"></i>
                         </button>
-                        <button class="btn" onClick="onChangePos('right')">
-                            <i class="arrow right"></i>
+                        <button class="btn col-3" onClick="onChangePos('right')">
+                            <i class="fas fa-angle-right fa-lg"></i>
                         </button>
                     </div>
-                    <div class="lines-toggle">
-                        <div class="btn btn-prev" onclick="onPrevLineTxt()">Prev Line</div>
-                        <div class="btn btn-next" onclick="onNextLineTxt()">Next Line</div>
-                        <div class="btn btn-add" onclick="onAddLine()">Add Line</div>
+
+                    <div class="row lines-toggle">
+                        <div class="btn btn-prev col-4" onclick="onPrevLineTxt()">Prev Line</div>
+                        <div class="btn btn-next col-4" onclick="onNextLineTxt()">Next Line</div>
+                        <div class="btn btn-add col-4" onclick="onAddLine()">Add Line</div>
                     </div>
-                    <button class="btn btn-more-options">More Options</button>
+
+                    <div class="row">
+                        <button class="btn btn-more-options col-12">More Options</button>
+                    </div>
                 </div>
 
                 <div class="download-btn">

@@ -35,6 +35,10 @@ body {
     padding: 0;
 }
 
+button {
+    border: 0;
+}
+
 h1,
 h3,
 h4,
@@ -45,6 +49,42 @@ p {
 
 a {
     text-decoration: none;
+}
+
+/* HELPERS */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
 }
 
 /* header */
@@ -73,6 +113,7 @@ nav {
     width: 370px;
     margin: 0 auto;
 }
+
 .burger {
     display: none;
 }
@@ -171,27 +212,7 @@ nav {
 }
 
 /* EDITOR */
-.flex {
-    display: flex;
-}
-.editor-left {
-    flex-basis: 65%;
-    flex-wrap: wrap;
-    align-content: space-between;
-    padding: 0 20px;
-    align-content: space-between;
 
-
-
-}
-.editor-right {
-    flex-basis:35%;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    padding: 0 20px;
-
-}
 .editor {
     padding-top: 100px;
     width: 100%;
@@ -199,17 +220,36 @@ nav {
     position: relative;
     top: -100vh;
     display: none;
-    
     padding-bottom: 50px;
 }
+
+.editor.show {
+    top: 0;
+    z-index: 1;
+    display: block;
+}
+
 .editor-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
+}
 
+.editor-left {
+    display: flex;
+    flex-basis: 65%;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0 20px;
+}
 
+.editor-right {
+    flex-basis: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 0 20px;
 }
 
 .back-btn {
@@ -217,35 +257,27 @@ nav {
     margin-bottom: 20px;
 }
 
-.hide {
-    display: none;
-}
-
-.editor.show {
-    top: 0;
-    z-index: 1;
-    display: block;
-
-}
 .canvas-conatiner {
-    flex-basis: 100%;
+    flex-basis: 0 0 100%;
     padding: 0;
+    width: 100%;
 }
+
 .back-btn {
     flex-basis: 100%;
     background-color: #2db398;
     color: #e0fafe;
-
 }
+
 .download-btn {
     flex-basis: 100%;
     background-color: #2db398;
     position: relative;
-   
+    margin-top: 10px;
 }
 
-
-.back-btn a, .download-btn a {
+.back-btn a,
+.download-btn a {
     padding: 10px;
     position: relative;
     cursor: pointer;
@@ -253,16 +285,16 @@ nav {
     justify-content: space-around;
     align-items: center;
     color: #e0fafe;
-
 }
-.download-btn i, .back-btn i {
+
+.download-btn i,
+.back-btn i {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     background: #f19f0e;
     width: 40px;
-
 }
 
 i.fas {
@@ -271,9 +303,8 @@ i.fas {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-
 }
+
 canvas {
     cursor: pointer;
     width: 100%;
@@ -282,32 +313,26 @@ canvas {
 }
 
 .control-box {
-    
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    width: 100%;
     color: #c1c4c5;
-    flex: 0 0 100%;
-    max-width: 100%;
-
+    text-align: center;
+    margin: 0 auto;
 }
-
-
 
 .txt {
     background-color: #bcc0c1;
-    border: 1px solid #6d706f;
+    padding: 2px 4px;
+    font-size: 1.5rem;
+    border: 0;
 }
 
 .btn {
     color: #c1c4c5;
-    border: 0;
-    cursor: pointer;
-    width: 100%;
-    border: 1px solid #757575;
     background: #6b6b6b;
+    cursor: pointer;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: 1rem;
 }
 
 .btn.disabled {
@@ -317,83 +342,53 @@ canvas {
 
 .color {
     background: #5d5d5d;
-    height: 38px;
+    height: auto;
+    border: 0;
 }
 
-.main-control {
-    display: flex;
-    width: 100%;
-    justify-content: stretch;
-}
-
-.color {
-    width: 100%;
-    border: 1px solid #757575;
-}
-
-.lines-toggle {
-    display: flex;
-}
-
-.pos-control {
-    display: flex;
-}
 .btn-align {
     position: relative;
 }
+
 .align {
     position: absolute;
-    background: red;
+    background: grey;
     top: 100%;
-    left:0;
+    left: 0;
     z-index: 2;
     border: 1px solid black;
+    color: white;
 }
+
 .align li {
     display: block;
     padding: 5px 10px;
     font-size: 1rem;
     margin: 0;
 }
+
 .align li:not(:last-child) {
-    border-bottom:1px solid black;
+    border-bottom: 1px solid black;
 }
 
-i {
-    border: solid #c1c4c5;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 2px;
+.control-box {
+    border: 1px solid #757575;
 }
 
-.right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+.control-box .row:not(:last-child) {
+    border-bottom: 1px solid #757575;
 }
 
-.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+.row > *:not(:last-child) {
+    border-right: 1px solid #757575;
 }
-
-.up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-}
-
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
-
-/* main */
-
 
 main {
     margin-top: 20px;
     position: relative;
     margin-bottom: 30px;
 }
+
 main::before {
     content: '';
     border-left: 1px solid #e4e9eb;
@@ -408,11 +403,13 @@ main::before {
 }
 
 /* ABOUT */
+
 .about-section {
     background: #2eb398;
     padding-top: 12px;
     padding-bottom: 12px
 }
+
 .about-container {
     display: flex;
     border-left: 1px solid #219d84;
@@ -421,45 +418,40 @@ main::before {
     position: relative;
     max-width: 920px;
     margin: 0 auto;
-
 }
+
 .me {
     margin-left: 22%;
-
 }
+
 .about-container .me h3 {
     font-family: 'Maven Pro', sans-serif;
     color: #d7fcf5;
     font-size: 1.8rem;
     font-family: 'Maven Pro', sans-serif;
-
-
-
 }
+
 .about-container .me h4 {
     color: #20816d;
     font-family: 'Maven Pro', sans-serif;
     font-size: 1.1rem;
- 
 }
-.about-container .me p{
+
+.about-container .me p {
     margin-top: 19px;
-    font-family: 'Lato' ;
+    font-family: 'Lato';
     color: #d7fcf5;
-    font-size: 12px ;
+    font-size: 12px;
     line-height: 21.56px;
 }
 
-
 .about-hex-con .hex {
-   position: absolute;
-   width: 20%;
-   top:10%;
-   bottom:0;
-   left: 10px;
+    position: absolute;
+    width: 20%;
+    top: 10%;
+    bottom: 0;
+    left: 10px;
 }
-   
-
 
 /* CONTACT */
 
@@ -467,14 +459,16 @@ main::before {
     background-color: #323232;
 }
 
-
 /* FOTTER */
+
 footer {
     background: #222222;
 }
+
 .fixed {
     position: fixed;
 }
+
 @media (max-width: 650px) {
     header {
         position: absolute;
@@ -510,25 +504,28 @@ footer {
         padding: 0 auto;
     }
     .filters-container {
-        
         padding-top: 70px;
     }
     .about-hex-con .hex {
         width: 35%;
-        top:0;
+        top: 0;
         right: 0;
         left: 0;
         margin: auto;
-     }
-        
-     .me {
+    }
+    .me {
         margin-left: 0;
         margin-top: 30%;
-    
     }
-    .editor-left, .editor-right { 
+}
+
+@media (max-width: 750px) {
+    .editor-left,
+    .editor-right {
         flex-basis: 100%;
         width: 100%;
     }
-     
+    .editor-container {
+        flex-wrap: wrap;
+    }
 }
