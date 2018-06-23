@@ -237,7 +237,7 @@ function makeTxt() {
         size: 40,
         align: 'center',
         color: '#000000',
-        font: 'Impact',
+        font: 'Arial',
         weight: 400,
         pos: {
             x: elCanvas.width / 2,
