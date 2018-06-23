@@ -55,6 +55,8 @@
                                 <option value="movie">
             </datalist>
         </div>
+        <input type="file" name="image" onchange="onFileInputChange(event)" />
+
 
     </div>
 
@@ -91,7 +93,13 @@
                         <input type="color" class="color" value="#000000" oninput="onChangeColor(this.value)">
                         <button class="btn btn-increase-font" onClick="onChangeSize('+')">+</button>
                         <button class="btn btn-decrease-font" onClick="onChangeSize('-')">-</button>
-                        <button class="btn btn-align">A</button>
+                        <button class="btn btn-align">A
+                            <ul class="clean-list align">
+                                <li>center</li>
+                                <li>left</li>
+                                <li>right</li>
+                            </ul>
+                        </button>
                         <button class="btn btn-bold" onClick="onChangeWeight()">B</button>
                     </div>
                     <div class="pos-control">

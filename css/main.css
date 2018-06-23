@@ -306,6 +306,8 @@ canvas {
     width: 100%;
     border: 1px solid #757575;
     background: #6b6b6b;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .btn.disabled {
@@ -315,6 +317,7 @@ canvas {
 
 .color {
     background: #5d5d5d;
+    height: 38px;
 }
 
 .main-control {
@@ -334,6 +337,26 @@ canvas {
 
 .pos-control {
     display: flex;
+}
+.btn-align {
+    position: relative;
+}
+.align {
+    position: absolute;
+    background: red;
+    top: 100%;
+    left:0;
+    z-index: 2;
+    border: 1px solid black;
+}
+.align li {
+    display: block;
+    padding: 5px 10px;
+    font-size: 1rem;
+    margin: 0;
+}
+.align li:not(:last-child) {
+    border-bottom:1px solid black;
 }
 
 i {
