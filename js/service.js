@@ -217,7 +217,7 @@ function addTxtLine(){
     gMeme.txts.push(makeTxt());
     moveNextTxtIdx();
     //gMeme.txts[gCurrTxtIdx].pos.x = elCanvas.width / 2;
-   // gMeme.txts[gCurrTxtIdx].pos.y = elCanvas.height / 2;
+   // gMeme.txts[gCurrTxtIdx].pos.y = elCanvas.width / 2;
     gMeme.txts[gCurrTxtIdx].pos.x = gMeme.txts[gCurrTxtIdx - 1].pos.x;
     gMeme.txts[gCurrTxtIdx].pos.y = gMeme.txts[gCurrTxtIdx - 1].pos.y +10;
     updateTxtBox();
