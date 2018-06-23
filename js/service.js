@@ -192,18 +192,24 @@ function changeCurrTxtIdx(txtID){
 function getNumOfTxt(){
     return gMeme.txts.length;
 }
+function updateColorBox(color){
+    var color = document.querySelector('.color');
+    color.value = color;
+}
 
 function moveNextTxtIdx(){
     if(gCurrTxtIdx < getNumOfTxt() -1){
-        gCurrTxtIdx ++
-        updateTxtBox(gMeme.txts[gCurrTxtIdx].line)
+        gCurrTxtIdx ++;
+        updateTxtBox(gMeme.txts[gCurrTxtIdx].line);
+        updateColorBox(gMeme.txts[gCurrTxtIdx].color);  
     }
 }
 
 function movePrevTxtIdx(){
     if(gCurrTxtIdx){
-        gCurrTxtIdx --
-        updateTxtBox(gMeme.txts[gCurrTxtIdx].line)
+        gCurrTxtIdx --;
+        updateTxtBox(gMeme.txts[gCurrTxtIdx].line);
+        updateColorBox(gMeme.txts[gCurrTxtIdx].color);     
     } 
 }
 
