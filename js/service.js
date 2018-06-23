@@ -193,8 +193,8 @@ function getNumOfTxt(){
     return gMeme.txts.length;
 }
 function updateColorBox(color){
-    var color = document.querySelector('.color');
-    color.value = color;
+    var elColor = document.querySelector('.color');
+    elColor.value = color;
 }
 
 function moveNextTxtIdx(){
@@ -209,6 +209,7 @@ function movePrevTxtIdx(){
     if(gCurrTxtIdx){
         gCurrTxtIdx --;
         updateTxtBox(gMeme.txts[gCurrTxtIdx].line);
+        console.log(gMeme.txts[gCurrTxtIdx].color)
         updateColorBox(gMeme.txts[gCurrTxtIdx].color);     
     } 
 }
@@ -229,7 +230,21 @@ function addTxtLine(){
     updateTxtBox();
 }
 function removeTxtLine(){
-    
+    debugger;
+   if (!getNumOfTxt()) return;
+    gMeme.txts.splice(gCurrTxtIdx,1);
+    if (getNumOfTxt() === gCurrTxtIdx && gCurrTxtIdx > 0) gCurrTxtIdx --;
+    if(getNumOfTxt()){
+        console.log('txt = ',gMeme.txts[gCurrTxtIdx].line)
+        updateTxtBox(gMeme.txts[gCurrTxtIdx].line);
+        updateColorBox(gMeme.txts[gCurrTxtIdx].color);
+    } else{
+        updateTxtBox();
+        updateColorBox('#000000');
+    }
+    console.log('numOfTxt: ',getNumOfTxt())
+
+    renderCanvas();
 }
 
 
@@ -239,7 +254,7 @@ function makeTxt() {
         line: '',
         size: 40,
         align: 'center',
-        color: '#000000',
+        color: document.querySelector('.color').value,
         font: 'Impact',
         weight: 400,
         pos: {
