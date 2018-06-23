@@ -69,6 +69,7 @@ function toggleView() {
     var elEditor = document.querySelector('.editor');
     elEditor.classList.toggle('show');
     document.querySelector('main').classList.toggle('hide');
+    document.querySelector('.filters-container').classList.toggle('hide');
 
 }
 
@@ -197,6 +198,20 @@ function onAddLine() {
 
 function downloadImg(elLink) {
     console.log(elCanvas)
+    console.log(event)
     var imgContent = elCanvas.toDataURL('image/jpeg');
     elLink.href = imgContent
+}
+
+function toggleMenu() {
+    var elBurger = document.querySelector('.burger')
+    var isOpen = document.querySelector('.main-menu').classList.toggle('menu-open');
+    var elHeader = document.querySelector('header').classList.toggle('fixed');
+    if (isOpen) {
+        elBurger.innerHTML = `&times;`
+
+    } else {
+        elBurger.innerText = '☰';
+    }
+
 }
