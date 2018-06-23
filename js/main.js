@@ -181,12 +181,23 @@ function onPrevLineTxt(){
 
 function canvasClicked(ev) {
     console.log(ev);
-    gMeme.txts[gCurrTxtIdx].pos.x = ev.offsetX;
-    gMeme.txts[gCurrTxtIdx].pos.y = ev.offsetY;
+    var MousePos = getMousePos(elCanvas, ev) ;
+    gMeme.txts[gCurrTxtIdx].pos.x = MousePos.x;
+    gMeme.txts[gCurrTxtIdx].pos.y = MousePos.y;
     renderCanvas();
 
 }
 
+function  getMousePos(canvas, ev) {
+    var rect = canvas.getBoundingClientRect(), // abs. size of element
+        scaleX = canvas.width / rect.width,    // relationship bitmap vs. element for X
+        scaleY = canvas.height / rect.height;  // relationship bitmap vs. element for Y
+  
+    return {
+      x: (ev.clientX - rect.left) * scaleX,   // scale mouse coordinates after they have
+      y: (ev.clientY - rect.top) * scaleY     // been adjusted to be relative to element
+    }
+  }
 function onAddLine() {
     console.log('clicked');
     addTxtLine();
