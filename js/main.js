@@ -196,6 +196,11 @@ function onAddLine() {
     
 }
 
+function onRemoveLine(){
+    removeTxtLine();
+    renderCanvas();
+}
+
 function downloadImg(elLink) {
     console.log(elCanvas)
     console.log(event)
