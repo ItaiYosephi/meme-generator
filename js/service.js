@@ -295,7 +295,6 @@ function changeTxtAlign(align){
 }
 
 function changeFont(font){
-<<<<<<< HEAD
     console.log(font,'${font}')
    gMeme.txts[gCurrTxtIdx].font = font;
     // switch (font) {
@@ -311,11 +310,6 @@ function changeFont(font){
     // }
 
 }
-=======
-    gFont = font;
-   gMeme.txts[gCurrTxtIdx].font = gFont;
-   }
->>>>>>> a465e4bfed7f5d1e2b0eb62966b11c43d138d669
 
 
 function changePos(strDir) {
@@ -339,8 +333,6 @@ function changePos(strDir) {
     }
 }
 
-<<<<<<< HEAD
-=======
 function toggleShadow(elVar){
     console.log(elVar.className)
     if(elVar.className === "btn shadow-off col-4") {
@@ -356,7 +348,6 @@ function toggleShadow(elVar){
      gMeme.txts[gCurrTxtIdx].shadow = gShadow;
 }
 
->>>>>>> a465e4bfed7f5d1e2b0eb62966b11c43d138d669
 function resetTxts() {
     gMeme.txts = [];
 }

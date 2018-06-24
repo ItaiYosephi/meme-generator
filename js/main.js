@@ -19,6 +19,7 @@ function init() {
 
 
 function renderGallery() {
+    debugger;
     var images = getImagesForDisplay();
     var elGallery = document.querySelector('.gallery')
     var strHtml = '';
