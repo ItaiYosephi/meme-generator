@@ -135,6 +135,9 @@ var gMeme = {
 
     txts: []
 }
+var gColor ='black';
+var gFont = 'Impact';
+var gShadow = 0;
 
 
 function updateCurrImg(id) {
@@ -173,7 +176,8 @@ function ifSubstrExist(str, substr) {
 }
 
 function updateColor(colorStr) {
-    gMeme.txts[gCurrTxtIdx].color = colorStr;
+    gColor = colorStr;
+    gMeme.txts[gCurrTxtIdx].color = gColor;
 
 }
 function changeSize(diff) {
@@ -255,9 +259,10 @@ function makeTxt() {
         line: 'Enter Your Text Here',
         size: 40,
         align: 'center',
-        color: document.querySelector('.color').value,
-        font: document.querySelector('.change-font').value,
+        color: gColor,
+        font: gFont,
         weight: 400,
+        shadow: gShadow,
         pos: {
             x: elCanvas.width / 2,
             y:  elCanvas.height / 2,
@@ -290,6 +295,7 @@ function changeTxtAlign(align){
 }
 
 function changeFont(font){
+<<<<<<< HEAD
     console.log(font,'${font}')
    gMeme.txts[gCurrTxtIdx].font = font;
     // switch (font) {
@@ -305,6 +311,11 @@ function changeFont(font){
     // }
 
 }
+=======
+    gFont = font;
+   gMeme.txts[gCurrTxtIdx].font = gFont;
+   }
+>>>>>>> a465e4bfed7f5d1e2b0eb62966b11c43d138d669
 
 
 function changePos(strDir) {
@@ -328,6 +339,24 @@ function changePos(strDir) {
     }
 }
 
+<<<<<<< HEAD
+=======
+function toggleShadow(elVar){
+    console.log(elVar.className)
+    if(elVar.className === "btn shadow-off col-4") {
+        elVar.className = "btn shadow-on col-4";
+        elVar.innerHTML = 'Shadow Off';
+        gShadow = 10;
+
+     } else {
+        elVar.className = "btn shadow-off col-4";
+        elVar.innerHTML = 'Shadow On';
+        gShadow = 0;
+     }
+     gMeme.txts[gCurrTxtIdx].shadow = gShadow;
+}
+
+>>>>>>> a465e4bfed7f5d1e2b0eb62966b11c43d138d669
 function resetTxts() {
     gMeme.txts = [];
 }
