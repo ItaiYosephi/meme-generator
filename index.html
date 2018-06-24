@@ -37,15 +37,19 @@
     </header>
 
 
-    <!-- FILTERS -->
-    <div class="filters-container">
 
-        <div class="filters-list">
-            <ul class="head-filter clean-list">
-            </ul>
-        </div>
+    <!-- MAIN - GALLERY -->
+    <main>
 
-    
+        <!-- FILTERS -->
+        <div class="filters-container">
+
+            <div class="filters-list">
+                <ul class="head-filter clean-list">
+                </ul>
+            </div>
+
+
             <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)" class="search">
 
             <datalist id="filters">
@@ -55,16 +59,13 @@
                             <option value="usa">
                                 <option value="movie">
             </datalist>
-        
-        
 
 
-    </div>
 
 
-    <!-- MAIN - GALLERY -->
-    <main>
-            <input type="file" name="image" onchange="onFileInputChange(event)" />
+        </div>
+
+        <input type="file" name="image" onchange="onFileInputChange(event)" />
 
 
         <ul id="" class="gallery hexGrid">
@@ -105,7 +106,7 @@
                                 <li id="left" onclick="onChangeAlign(this.id)">left</li>
                                 <li id="right" onclick="onChangeAlign(this.id)">right</li>
                             </ul>
-                           
+
                         </button>
                         <button class="btn btn-bold col" onClick="onChangeWeight()">B</button>
                     </div>
@@ -138,11 +139,11 @@
                         <button class="btn btn-more-options col-12">More Options</button>
                     </div>
                     <div class="row">
-                            <select class="change-font font col-12" onchange="onChangeFont(this.value)">
-                                    <option value="Impact">Impact</option>
-                                    <option value="Lato">Lato</option>
-                                    <option value="Arial">Arial</option>
-                                </select>
+                        <select class="change-font font col-12" onchange="onChangeFont(this.value)">
+                            <option value="Impact">Impact</option>
+                            <option value="Lato">Lato</option>
+                            <option value="Arial">Arial</option>
+                        </select>
                     </div>
                 </div>
 
@@ -208,7 +209,8 @@
             <div class="address">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In blanditiis natus quia. Inventore aspernatur,
                     deserunt recusandae maiores debitis culpa tenetur vero et numquam ipsa neque, ab accusamus, ratione veniam
-                    harum?</p>
+                    harum?
+                </p>
                 <p>street</p>
                 <p>
                     <a href="tel:123455"></a>

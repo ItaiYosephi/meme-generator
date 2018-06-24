@@ -62,33 +62,35 @@ function onImgClick(id) {
     resetTxts()
     updateTxtBox();
     updateCurrImg(id)
+    updateGImg(getImgById(gMeme.selectedImgId).url)
     toggleView()
-    renderCanvas()
+}
+
+function updateGImg(src) {
+    ctx = elCanvas.getContext("2d");
+    gImg = new Image()
+    gImg.onload = function () {
+     renderCanvas()
+
+    }
+    gImg.src = src;
 }
 
 function toggleView() {
 
     var elEditor = document.querySelector('.editor');
     elEditor.classList.toggle('show');
-    document.querySelector('main').classList.toggle('hide');
-    document.querySelector('.filters-container').classList.toggle('hide');
+    document.querySelector('main').classList.toggle('tog');
 
 }
 
 function renderCanvas() {
 
-    ctx = elCanvas.getContext("2d");
-    var img = new Image()
-    img.onload = function () {
-        elCanvas.width = img.naturalWidth
-        elCanvas.height = img.naturalHeight
-        ctx.drawImage(img, 0, 0);
-        renderTxts()
+    elCanvas.width = gImg.naturalWidth
+    elCanvas.height = gImg.naturalHeight
+    ctx.drawImage(gImg, 0, 0);
+    renderTxts()
 
-    }
-
-    img.src = getImgById(gMeme.selectedImgId).url;
-    // ctx.drawImage(img, 0, 0, elCanvas.width, elCanvas.height)
 }
 
 function onTxtTyped(txt) {
@@ -118,7 +120,7 @@ function renderTxts() {
     }
 
 }
- 
+
 
 function onFilterTyped(value) {
     gFilter = value;
@@ -160,11 +162,11 @@ function onChangeWeight() {
 
 }
 
-function onOpenChangeAlign(){
+function onOpenChangeAlign() {
     openChangeTxtAlign();
     renderCanvas();
 }
-function onChangeAlign(elAlign){
+function onChangeAlign(elAlign) {
     console.log(elAlign);
     changeTxtAlign(elAlign);
 }
@@ -175,15 +177,15 @@ function onChangePos(strDir) {
 
 }
 
-function onNextLineTxt(){
+function onNextLineTxt() {
     moveNextTxtIdx();
 }
 
-function onPrevLineTxt(){
+function onPrevLineTxt() {
     movePrevTxtIdx();
 }
 
-function onChangeFont(elFont){
+function onChangeFont(elFont) {
     changeFont(elFont);
     renderCanvas();
 }
@@ -192,33 +194,33 @@ function onChangeFont(elFont){
 
 function canvasClicked(ev) {
     console.log(ev);
-    var MousePos = getMousePos(elCanvas, ev) ;
+    var MousePos = getMousePos(elCanvas, ev);
     gMeme.txts[gCurrTxtIdx].pos.x = MousePos.x;
     gMeme.txts[gCurrTxtIdx].pos.y = MousePos.y;
     renderCanvas();
 
 }
 
-function  getMousePos(canvas, ev) {
+function getMousePos(canvas, ev) {
     var rect = canvas.getBoundingClientRect(), // abs. size of element
         scaleX = canvas.width / rect.width,    // relationship bitmap vs. element for X
         scaleY = canvas.height / rect.height;  // relationship bitmap vs. element for Y
-  
+
     return {
-      x: (ev.clientX - rect.left) * scaleX,   // scale mouse coordinates after they have
-      y: (ev.clientY - rect.top) * scaleY     // been adjusted to be relative to element
+        x: (ev.clientX - rect.left) * scaleX,   // scale mouse coordinates after they have
+        y: (ev.clientY - rect.top) * scaleY     // been adjusted to be relative to element
     }
-  }
+}
 function onAddLine() {
     console.log('clicked');
     addTxtLine();
     renderCanvas();
-   // debugger;
-   // document.querySelector('.btn-add').disabled = true;
-    
+    // debugger;
+    // document.querySelector('.btn-add').disabled = true;
+
 }
 
-function onRemoveLine(){
+function onRemoveLine() {
     removeTxtLine();
     renderCanvas();
 }

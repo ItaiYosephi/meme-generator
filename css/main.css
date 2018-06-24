@@ -73,10 +73,10 @@ a {
     max-width: 33.333333%;
 } */
 
- .col-4 {
+.col-4 {
     flex: 0 0 50%;
     max-width: 50%;
-} 
+}
 
 .col {
     flex-basis: 0;
@@ -86,7 +86,6 @@ a {
 
 .hide {
     display: none;
-
 }
 
 .flex {
@@ -123,7 +122,6 @@ nav {
 .burger {
     display: none;
     color: white;
-
 }
 
 .main-menu {
@@ -132,12 +130,16 @@ nav {
     padding: 0;
     margin: 0;
 }
+
 .menu-open {
-    display: grid;;
+    display: grid;
+    ;
 }
+
 header.menu-open {
     position: relative;
 }
+
 .portfolio {
     grid-column: 1 / 2;
 }
@@ -230,20 +232,21 @@ header.menu-open {
     padding-top: 100px;
     width: 100%;
     background: #404040;
-    position: relative;
-    top: -100vh;
-    display: none;
     padding-bottom: 50px;
-    transform: scale(0);
-    transition: 0.5s;
-
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.4s;
 }
 
 .editor.show {
     top: 0;
+    position: relative;
     z-index: 1;
-    transform: scale(1);
-    display: block;
+    transform: translateX(0);
 }
 
 .editor-container {
@@ -377,9 +380,7 @@ canvas {
     color: white;
     width: 100%;
     font-size: 1rem;
-    border: 1px solid black ;
-
-
+    border: 1px solid black;
 }
 
 .align li {
@@ -392,17 +393,19 @@ canvas {
 .align li:not(:last-child) {
     border-bottom: 1px solid black;
 }
+
 select.font {
     border: 0;
     padding: 2px 4px;
     color: #c1c4c5;
     background: #6b6b6b;
-    
     font-size: 1.5rem;
 }
+
 select.font option {
     width: 100%;
 }
+
 .control-box {
     border: 1px solid #757575;
 }
@@ -411,31 +414,33 @@ select.font option {
     border-bottom: 1px solid #757575;
 }
 
-.row > *:not(:last-child) {
+.row>*:not(:last-child) {
     border-right: 1px solid #757575;
 }
 
 main {
-    margin-top: 20px;
     position: relative;
     margin-bottom: 30px;
-
-
+    transform: translateX(0);
+    transition: all 0.4s;
 }
 
+main.tog {
+    position: fixed;
+    transform: translateX(100vw);
+}
 
-
-main::before {
+.gallery::after {
     content: '';
     border-left: 1px solid #e4e9eb;
     border-right: 1px solid #e4e9eb;
     margin: 0 auto;
     position: absolute;
-    top: 7%;
+    top: 20%;
     left: 11%;
     width: 78%;
     z-index: -1;
-    height: 86%;
+    height: 75%;
 }
 
 /* ABOUT */
@@ -494,6 +499,7 @@ main::before {
 .contact {
     background-color: #323232;
 }
+
 .contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -503,38 +509,44 @@ main::before {
     margin: 0 auto;
     color: #e0e0e0;
 }
+
 .contact-container .form {
     flex-basis: 75%;
 }
+
 .contact-container .contact-head {
     flex-basis: 100%;
     width: 100%;
 }
+
 .contact-container .address {
     flex-basis: 25%;
-    padding-left:20px;
+    padding-left: 20px;
 }
+
 .contact-container .contact-head h4 {
     margin: 0 0 8px 0;
     font-family: 'Maven Pro';
     font-size: 1.9rem;
 }
+
 .contact-container .contact-head p {
     font-family: "Maven Pro";
     color: #bebebe;
     margin-bottom: 20px;
-
 }
-.contact .form input, .contact .form textarea {
+
+.contact .form input,
+.contact .form textarea {
     width: 100%;
     background-color: #454545;
     border: 0;
     padding: 13px 15px;
     font-family: 'Lato';
-    margin-bottom: 16px;   
+    margin-bottom: 16px;
     color: #bebebe;
-
 }
+
 .send-btn {
     background-color: #2eb398;
     float: right;
@@ -545,7 +557,6 @@ main::before {
     font-size: 12px;
     font-weight: bold;
     padding: 14px 30px;
-
 }
 
 /* FOOTER */
@@ -553,8 +564,6 @@ main::before {
 footer {
     background: #222222;
 }
-
-
 
 @media (max-width: 650px) {
     header {
@@ -571,7 +580,6 @@ footer {
     }
     .burger {
         display: flex;
-
         position: relative;
         top: 0;
         margin-left: auto;
@@ -608,6 +616,19 @@ footer {
     header.menu-open {
         position: fixed;
     }
+    .contact-container .address {
+        flex-basis: 100%;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+    .contact-container .form {
+        flex-basis: 100%;
+    }
+    .send-btn { 
+        width: 100%
+    }
+
+
 }
 
 @media (max-width: 850px) {
@@ -631,13 +652,13 @@ footer {
     border: 1px solid #ddd;
     margin-bottom: 12px;
 }
+
 .gallery .hex:hover {
     transform: scale(1);
     z-index: 3;
-
 }
+
 .gallery .hex {
     transform: scale(0.9);
     transition: all 0.4s;
-
 }
