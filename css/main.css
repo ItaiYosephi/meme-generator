@@ -232,7 +232,7 @@ header.menu-open {
 /* EDITOR */
 
 .editor {
-    padding-top: 100px;
+    padding-top: 50px;
     width: 100%;
     background: #404040;
     padding-bottom: 50px;
@@ -647,6 +647,11 @@ footer {
             flex-basis: 100%
         
     }
+    .editor {
+        padding-top: 100px;
+
+    }
+
 }
 
 @media (max-width: 850px) {
