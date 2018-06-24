@@ -111,6 +111,7 @@ function renderTxts() {
     for (var i = 0; i < gMeme.txts.length; i++) {
         var currTxt = gMeme.txts[i];
         ctx.fillStyle = currTxt.color;
+        ctx.strokeStyle = '#000000';
         ctx.font = `${gMeme.txts[i].weight} ${gMeme.txts[i].size}pt ${gMeme.txts[i].font}`;
         ctx.textAlign = gMeme.txts[i].align;
         // ctx.font = `${gMeme.txts[gCurrTxtIdx].weight} ${gMeme.txts[gCurrTxtIdx].size}px ${gMeme.txts[gCurrTxtIdx].font}`;
@@ -124,7 +125,7 @@ function renderTxts() {
         ctx.shadowColor = "rgba(0, 0, 0, 0.8)";
 
         ctx.fillText(currTxt.line, x, y)
-        // ctx.strokeText(currTxt.line, 150, 150)
+        ctx.strokeText(currTxt.line, x, y)
 
     }
 

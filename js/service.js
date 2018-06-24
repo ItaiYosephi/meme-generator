@@ -135,7 +135,7 @@ var gMeme = {
 
     txts: []
 }
-var gColor ='#000000';
+var gColor ='#ffffff';
 var gFont = 'Impact';
 var gShadow = 0;
 
@@ -296,21 +296,9 @@ function changeTxtAlign(align){
 }
 
 function changeFont(font){
-    console.log(font,'${font}')
-   gMeme.txts[gCurrTxtIdx].font = font;
-    // switch (font) {
-    //     case 'Impact':
-    //         gMeme.txts[gCurrTxtIdx].font = ';
-    //         break;
-    //     case 'down':
-    //         gMeme.txts[gCurrTxtIdx].font = ;
-    //         break;
-    //     case 'right':
-    //         gMeme.txts[gCurrTxtIdx].font = ;
-    //         break;
-    // }
-
-}
+    gFont = font;
+   gMeme.txts[gCurrTxtIdx].font = gFont;
+   }
 
 
 function changePos(strDir) {
