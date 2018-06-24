@@ -253,13 +253,8 @@ function makeTxt() {
     return {
         line: '',
         size: 40,
-<<<<<<< HEAD
-        align: 'right',
-        color: '#000000',
-=======
         align: 'center',
         color: document.querySelector('.color').value,
->>>>>>> 1e5a0b46798577f777768c5492cbefb9b44edaa5
         font: 'Arial',
         weight: 400,
         pos: {
