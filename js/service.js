@@ -135,6 +135,9 @@ var gMeme = {
 
     txts: []
 }
+var gColor;
+var gFont;
+var gShadow = 0;
 
 
 function updateCurrImg(id) {
@@ -264,6 +267,7 @@ function makeTxt() {
         color: document.querySelector('.color').value,
         font: document.querySelector('.change-font').value,
         weight: 400,
+        shadow: gShadow,
         pos: {
             x: elCanvas.width / 2,
             y:  elCanvas.height / 2,
@@ -326,11 +330,14 @@ function toggleShadow(elVar){
     if(elVar.className === "btn shadow-off col-4") {
         elVar.className = "btn shadow-on col-4";
         elVar.innerHTML = 'Shadow Off';
+        gShadow = 10;
 
      } else {
         elVar.className = "btn shadow-off col-4";
         elVar.innerHTML = 'Shadow On';
+        gShadow = 0;
      }
+     gMeme.txts[gCurrTxtIdx].shadow = gShadow;
 }
 
 function resetTxts() {
