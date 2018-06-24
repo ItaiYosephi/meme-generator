@@ -727,7 +727,7 @@ footer {
 
 }
 .share-container {
-    /* display: none; */
+    display: none;
 }
 .action-btns {
     width: 100%;

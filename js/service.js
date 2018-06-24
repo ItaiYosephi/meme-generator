@@ -324,13 +324,13 @@ function changePos(strDir) {
 
 function toggleShadow(elVar){
     console.log(elVar.className)
-    if(elVar.className === "btn shadow-off col-4") {
-        elVar.className = "btn shadow-on col-4";
+    if(elVar.className === "btn shadow-off col-12") {
+        elVar.className = "btn shadow-on col-12";
         elVar.innerHTML = 'Shadow Off';
         gShadow = 10;
 
      } else {
-        elVar.className = "btn shadow-off col-4";
+        elVar.className = "btn shadow-off col-12";
         elVar.innerHTML = 'Shadow On';
         gShadow = 0;
      }

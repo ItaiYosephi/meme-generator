@@ -48,28 +48,29 @@
             <div class="filters-list">
                 <ul class="head-filter clean-list">
                 </ul>
-            </div>    
+            </div>
 
         </div>
 
 
         <div class="top-wrapper">
 
-                <label class="btn-file">
-                        Upload <input type="file" hidden onchange="onFileInputChange(event)" />
-                    </label>
-                <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)" class="search">
+            <label class="btn-file">
+                Upload
+                <input type="file" hidden onchange="onFileInputChange(event)" />
+            </label>
+            <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)" class="search">
 
-                <datalist id="filters">
-                    <option value="happy">
-                        <option value="man">
-                            <option value="qute">
-                                <option value="usa">
-                                    <option value="movie">
-                </datalist>
-          
+            <datalist id="filters">
+                <option value="happy">
+                    <option value="man">
+                        <option value="qute">
+                            <option value="usa">
+                                <option value="movie">
+            </datalist>
+
         </div>
-   
+
         <ul id="" class="gallery hexGrid">
         </ul>
     </main>
@@ -138,8 +139,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="btn shadow-off col-6" onclick="onToggleShadow(this)">Shadow On</div>
-                        <button class="btn btn-more-options col-6">More Options</button>
+                        <div class="btn shadow-off col-12" onclick="onToggleShadow(this)">Shadow On</div>
                     </div>
                     <div class="row">
                         <select class="change-font font col-12" onchange="onChangeFont(this.value)">
@@ -153,16 +153,17 @@
                 <div class="action-btns">
 
                     <div class="share">
-                        
+
                         <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
-                            <input name="img" id="imgData" type="hidden"/>
-                            <button type="submit" class="publish-btn"></i>Publish</button>
+                            <input name="img" id="imgData" type="hidden" />
+                            <button type="submit" class="publish-btn">
+                                </i>Publish</button>
                         </form>
                         <div class="share-container"></div>
-                        
+
                     </div>
-                    
-                    
+
+
                     <div class="download-btn">
                         <a class="download-img" href="#" onclick="downloadImg(this)" download="my-img.jpg">
                             <i class="fas fa-download fa-lg"></i>
@@ -234,14 +235,14 @@
     </section>
 
     <!-- FOOTER -->
- 
-   
+
+
     <footer>
 
         <p>&copy; Copyright 2013</p>
 
     </footer>
-    
+
     <script src="js/utils.js"></script>
     <script src="js/upload-service.js"></script>
     <script src="js/service.js"></script>
