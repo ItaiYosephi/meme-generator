@@ -101,9 +101,9 @@
                         <button class="btn btn-decrease-font col" onClick="onChangeSize('-')">-</button>
                         <button class="btn btn-align col" onclick="onOpenChangeAlign()">A
                             <ul class="clean-list align hide">
-                                <li>center</li>
-                                <li>left</li>
-                                <li>right</li>
+                                <li id="center" onclick="onChangeAlign(this.id)">center</li>
+                                <li id="left" onclick="onChangeAlign(this.id)">left</li>
+                                <li id="right" onclick="onChangeAlign(this.id)">right</li>
                             </ul>
                            
                         </button>

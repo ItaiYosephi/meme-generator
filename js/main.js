@@ -169,6 +169,10 @@ function onOpenChangeAlign(){
     openChangeTxtAlign();
     renderCanvas();
 }
+function onChangeAlign(elAlign){
+    console.log(elAlign);
+    changeTxtAlign(elAlign);
+}
 
 function onChangePos(strDir) {
     changePos(strDir)
