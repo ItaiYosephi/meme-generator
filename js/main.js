@@ -164,6 +164,10 @@ function onOpenChangeAlign(){
     openChangeTxtAlign();
     renderCanvas();
 }
+function onChangeAlign(elAlign){
+    console.log(elAlign);
+    changeTxtAlign(elAlign);
+}
 
 function onChangePos(strDir) {
     changePos(strDir)
@@ -177,6 +181,11 @@ function onNextLineTxt(){
 
 function onPrevLineTxt(){
     movePrevTxtIdx();
+}
+
+function onChangeFont(elFont){
+    changeFont(elFont);
+    renderCanvas();
 }
 
 

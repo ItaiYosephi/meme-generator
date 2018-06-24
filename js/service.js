@@ -251,11 +251,11 @@ function removeTxtLine(){
 
 function makeTxt() {
     return {
-        line: '',
+        line: 'Enter Your Text Here',
         size: 40,
         align: 'center',
         color: document.querySelector('.color').value,
-        font: 'Arial',
+        font: document.querySelector('.change-font').value,
         weight: 400,
         pos: {
             x: elCanvas.width / 2,
@@ -266,6 +266,42 @@ function makeTxt() {
 function openChangeTxtAlign(){
     var elChangeAlign = document.querySelector('.align');
     elChangeAlign.classList.toggle('hide');
+
+}
+
+function changeTxtAlign(align){
+    switch (align) {
+        case 'center':
+            gMeme.txts[gCurrTxtIdx].pos.x = elCanvas.width / 2;
+            gMeme.txts[gCurrTxtIdx].align = 'center';
+            break;
+            case 'left':
+            gMeme.txts[gCurrTxtIdx].pos.x = 0;
+            gMeme.txts[gCurrTxtIdx].align = 'left';
+            //gMeme.txts[gCurrTxtIdx].
+            break;
+            case 'right':
+            gMeme.txts[gCurrTxtIdx].pos.x = elCanvas.width;
+            gMeme.txts[gCurrTxtIdx].align = 'right';
+            break;
+    }
+
+}
+
+function changeFont(font){
+    console.log(font,'${font}')
+   gMeme.txts[gCurrTxtIdx].font = font;
+    // switch (font) {
+    //     case 'Impact':
+    //         gMeme.txts[gCurrTxtIdx].font = ';
+    //         break;
+    //     case 'down':
+    //         gMeme.txts[gCurrTxtIdx].font = ;
+    //         break;
+    //     case 'right':
+    //         gMeme.txts[gCurrTxtIdx].font = ;
+    //         break;
+    // }
 
 }
 
