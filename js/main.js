@@ -112,6 +112,12 @@ function renderTxts() {
         // ctx.textAlign = gMeme.txts[gCurrTxtIdx].align;
         var x = currTxt.pos.x;
         var y = currTxt.pos.y;
+        //shadow parameters:
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = "rgba(0, 0, 0, 0.8)";
+
         ctx.fillText(currTxt.line, x, y)
         // ctx.strokeText(currTxt.line, 150, 150)
 
@@ -188,6 +194,10 @@ function onChangeFont(elFont){
     renderCanvas();
 }
 
+function onToggleShadow(elVar){
+    toggleShadow(elVar);
+    renderCanvas();
+}
 
 
 function canvasClicked(ev) {

@@ -278,7 +278,6 @@ function changeTxtAlign(align){
             case 'left':
             gMeme.txts[gCurrTxtIdx].pos.x = 0;
             gMeme.txts[gCurrTxtIdx].align = 'left';
-            //gMeme.txts[gCurrTxtIdx].
             break;
             case 'right':
             gMeme.txts[gCurrTxtIdx].pos.x = elCanvas.width;
@@ -291,19 +290,7 @@ function changeTxtAlign(align){
 function changeFont(font){
     console.log(font,'${font}')
    gMeme.txts[gCurrTxtIdx].font = font;
-    // switch (font) {
-    //     case 'Impact':
-    //         gMeme.txts[gCurrTxtIdx].font = ';
-    //         break;
-    //     case 'down':
-    //         gMeme.txts[gCurrTxtIdx].font = ;
-    //         break;
-    //     case 'right':
-    //         gMeme.txts[gCurrTxtIdx].font = ;
-    //         break;
-    // }
-
-}
+   }
 
 
 function changePos(strDir) {
@@ -325,6 +312,18 @@ function changePos(strDir) {
 
 
     }
+}
+
+function toggleShadow(elVar){
+    console.log(elVar.className)
+    if(elVar.className === "btn shadow-off col-4") {
+        elVar.className = "btn shadow-on col-4";
+        elVar.innerHTML = 'Shadow Off';
+
+     } else {
+        elVar.className = "btn shadow-off col-4";
+        elVar.innerHTML = 'Shadow On';
+     }
 }
 
 function resetTxts() {
