@@ -263,6 +263,11 @@ function makeTxt() {
         }
     }
 }
+function openChangeTxtAlign(){
+    var elChangeAlign = document.querySelector('.align');
+    elChangeAlign.classList.toggle('hide');
+
+}
 
 
 function changePos(strDir) {

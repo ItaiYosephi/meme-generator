@@ -163,6 +163,11 @@ function onChangeWeight() {
 
 }
 
+function onOpenChangeAlign(){
+    openChangeTxtAlign();
+    renderCanvas();
+}
+
 function onChangePos(strDir) {
     changePos(strDir)
     renderCanvas();
