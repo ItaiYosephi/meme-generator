@@ -34,14 +34,12 @@ function doUploadImg(elForm, onSuccess) {
     })
 }
 
-function handleImageFromInput(ev, onImageReady) {
-    document.querySelector('.share-container').innerHTML = ''
+function handleImageFromInput(ev) {
+    // document.querySelector('.share-container').innerHTML = ''
     var reader = new FileReader();
 
     reader.onload = function (event) {
-        var img = new Image();
-        img.onload = onImageReady.bind(null, img)
-        img.src = event.target.result;
+        updateGImg(event.target.result)        
     }
     reader.readAsDataURL(ev.target.files[0]);
 }

@@ -254,3 +254,9 @@ function toggleMenu() {
     }
 
 }
+
+function onFileInputChange(ev) {
+    handleImageFromInput(ev)
+    toggleView();
+
+}
