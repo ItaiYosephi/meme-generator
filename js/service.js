@@ -1,7 +1,7 @@
 'use strict'
 
 console.log('meme');
-
+var gImg;
 var gImgs = [
     {
         id: 1,
@@ -139,8 +139,15 @@ var gMeme = {
 
 function updateCurrImg(id) {
     gMeme.selectedImgId = id;
+    ctx = elCanvas.getContext("2d");
+    gImg = new Image()
+    gImg.onload = function () {
+     renderCanvas()
 
+    }
+    gImg.src = getImgById(gMeme.selectedImgId).url;
 }
+
 function getImagesForDisplay() {
     var imgs = [];
     if (gFilter === '') return gImgs;
