@@ -135,7 +135,7 @@ var gMeme = {
 
     txts: []
 }
-var gColor ='black';
+var gColor ='#000000';
 var gFont = 'Impact';
 var gShadow = 0;
 
@@ -232,12 +232,14 @@ function updateTxtBox(txt){
 }
 
 function addTxtLine(){
+    if (gMeme.txts[gCurrTxtIdx].line === 'Enter Your Text Here') return;
+    console.log(gMeme.txts[gCurrTxtIdx].line);
     gMeme.txts.push(makeTxt());
     changeCurrTxtIdx(getNumOfTxt() -1);
     //gMeme.txts[gCurrTxtIdx].pos.x = elCanvas.width / 2;
    // gMeme.txts[gCurrTxtIdx].pos.y = elCanvas.width / 2;
     gMeme.txts[gCurrTxtIdx].pos.x = gMeme.txts[gCurrTxtIdx - 1].pos.x;
-    gMeme.txts[gCurrTxtIdx].pos.y = gMeme.txts[gCurrTxtIdx - 1].pos.y +10;
+    gMeme.txts[gCurrTxtIdx].pos.y = gMeme.txts[gCurrTxtIdx - 1].pos.y +40;
     updateTxtBox();
 }
 function removeTxtLine(){
