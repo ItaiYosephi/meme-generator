@@ -238,7 +238,7 @@ function makeTxt() {
     return {
         line: '',
         size: 40,
-        align: 'center',
+        align: 'right',
         color: '#000000',
         font: 'Arial',
         weight: 400,
@@ -269,4 +269,8 @@ function changePos(strDir) {
 
 
     }
+}
+
+function resetTxts() {
+    gMeme.txts = [];
 }

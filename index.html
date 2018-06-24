@@ -16,7 +16,7 @@
     <!-- HEADER -->
     <header>
         <nav>
-            <div class="burger burger-open" onclick="toggleMenu()">☰</div>
+            <div class="burger" onclick="toggleMenu()">☰</div>
             <ul class="main-menu clean-list">
                 <li class="portfolio">
                     <a href="#">Portfolio</a>
@@ -45,8 +45,9 @@
             </ul>
         </div>
 
-        <div>
-            <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)">
+    
+            <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)" class="search">
+
             <datalist id="filters">
                 <option value="happy">
                     <option value="man">
@@ -54,16 +55,17 @@
                             <option value="usa">
                                 <option value="movie">
             </datalist>
-        </div>
-        <input type="file" name="image" onchange="onFileInputChange(event)" />
+        
+        
 
 
     </div>
 
 
-
     <!-- MAIN - GALLERY -->
     <main>
+            <input type="file" name="image" onchange="onFileInputChange(event)" />
+
 
         <ul id="" class="gallery hexGrid">
         </ul>

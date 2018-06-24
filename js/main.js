@@ -59,6 +59,8 @@ function renderFilterList() {
 
 
 function onImgClick(id) {
+    resetTxts()
+    updateTxtBox();
     updateCurrImg(id)
     toggleView()
     renderCanvas()
@@ -222,7 +224,7 @@ function downloadImg(elLink) {
 function toggleMenu() {
     var elBurger = document.querySelector('.burger')
     var isOpen = document.querySelector('.main-menu').classList.toggle('menu-open');
-    var elHeader = document.querySelector('header').classList.toggle('fixed');
+    var elHeader = document.querySelector('header').classList.toggle('menu-open');
     if (isOpen) {
         elBurger.innerHTML = `&times;`
 
