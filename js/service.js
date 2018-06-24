@@ -135,8 +135,8 @@ var gMeme = {
 
     txts: []
 }
-var gColor;
-var gFont;
+var gColor ='black';
+var gFont = 'Impact';
 var gShadow = 0;
 
 
@@ -182,7 +182,8 @@ function ifSubstrExist(str, substr) {
 }
 
 function updateColor(colorStr) {
-    gMeme.txts[gCurrTxtIdx].color = colorStr;
+    gColor = colorStr;
+    gMeme.txts[gCurrTxtIdx].color = gColor;
 
 }
 function changeSize(diff) {
@@ -264,8 +265,8 @@ function makeTxt() {
         line: 'Enter Your Text Here',
         size: 40,
         align: 'center',
-        color: document.querySelector('.color').value,
-        font: document.querySelector('.change-font').value,
+        color: gColor,
+        font: gFont,
         weight: 400,
         shadow: gShadow,
         pos: {
@@ -299,8 +300,8 @@ function changeTxtAlign(align){
 }
 
 function changeFont(font){
-    console.log(font,'${font}')
-   gMeme.txts[gCurrTxtIdx].font = font;
+    gFont = font;
+   gMeme.txts[gCurrTxtIdx].font = gFont;
    }
 
 
