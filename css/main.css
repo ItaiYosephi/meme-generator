@@ -86,6 +86,7 @@ a {
 
 .hide {
     display: none;
+
 }
 
 .flex {
@@ -233,11 +234,15 @@ header.menu-open {
     top: -100vh;
     display: none;
     padding-bottom: 50px;
+    transform: scale(0);
+    transition: 0.5s;
+
 }
 
 .editor.show {
     top: 0;
     z-index: 1;
+    transform: scale(1);
     display: block;
 }
 
@@ -414,7 +419,11 @@ main {
     margin-top: 20px;
     position: relative;
     margin-bottom: 30px;
+
+
 }
+
+
 
 main::before {
     content: '';
@@ -621,4 +630,13 @@ footer {
     padding: 8px 20px 8px 40px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
+}
+.gallery .hex:hover {
+    transform: scale(1);
+    z-index: 3;
+
+}
+.gallery .hex {
+    transform: scale(0.9);
+
 }
