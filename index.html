@@ -48,27 +48,28 @@
             <div class="filters-list">
                 <ul class="head-filter clean-list">
                 </ul>
-            </div>
-
-
-            <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)" class="search">
-
-            <datalist id="filters">
-                <option value="happy">
-                    <option value="man">
-                        <option value="qute">
-                            <option value="usa">
-                                <option value="movie">
-            </datalist>
-
-
-
+            </div>    
 
         </div>
 
-        <input type="file" name="image" onchange="onFileInputChange(event)" />
 
+        <div class="top-wrapper">
 
+                <label class="btn-file">
+                        Upload <input type="file" hidden onchange="onFileInputChange(event)" />
+                    </label>
+                <input list="filters" oninput="onFilterTyped(this.value)" onchange="onFilterClick(this.value)" class="search">
+
+                <datalist id="filters">
+                    <option value="happy">
+                        <option value="man">
+                            <option value="qute">
+                                <option value="usa">
+                                    <option value="movie">
+                </datalist>
+          
+        </div>
+   
         <ul id="" class="gallery hexGrid">
         </ul>
     </main>
@@ -86,7 +87,7 @@
                 </div>
 
                 <div class="canvas-container">
-                    <canvas width="400" height="400" onclick="canvasClicked(event)"></canvas>
+                    <canvas width="400" height="400" onclick="canvasClicked(event)" class="canvas"></canvas>
                 </div>
             </div>
 
@@ -128,17 +129,17 @@
                     </div>
 
                     <div class="row lines-toggle">
-                        <div class="btn btn-prev col-4  " onclick="onPrevLineTxt()">Prev Line</div>
-                        <div class="btn btn-next col-4" onclick="onNextLineTxt()">Next Line</div>
+                        <div class="btn btn-prev col-6" onclick="onPrevLineTxt()">Prev Line</div>
+                        <div class="btn btn-next col-6" onclick="onNextLineTxt()">Next Line</div>
                     </div>
                     <div class="row add-remove-line">
-                        <div class="btn btn-add col-4" onclick="onAddLine()">Add Line</div>
-                        <div class="btn btn-remove col-4" onclick="onRemoveLine()">Remove Line</div>
+                        <div class="btn btn-add col-6" onclick="onAddLine()">Add Line</div>
+                        <div class="btn btn-remove col-6" onclick="onRemoveLine()">Remove Line</div>
                     </div>
 
                     <div class="row">
-                        <div class="btn shadow-off col-4" onclick="onToggleShadow(this)">Shadow On</div>
-                        <button class="btn btn-more-options col-4">More Options</button>
+                        <div class="btn shadow-off col-6" onclick="onToggleShadow(this)">Shadow On</div>
+                        <button class="btn btn-more-options col-6">More Options</button>
                     </div>
                     <div class="row">
                         <select class="change-font font col-12" onchange="onChangeFont(this.value)">
@@ -149,17 +150,29 @@
                     </div>
                 </div>
 
-                <div class="download-btn">
-                    <a class="download-img" href="#" onclick="downloadImg(this)" download="my-img.jpg">
-                        <i class="fas fa-download fa-lg"></i>
-                        Download as jpeg
-                    </a>
+                <div class="action-btns">
+
+                    <div class="share">
+                        
+                        <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                            <input name="img" id="imgData" type="hidden"/>
+                            <button type="submit" class="publish-btn"></i>Publish</button>
+                        </form>
+                        <div class="share-container"></div>
+                        
+                    </div>
+                    
+                    
+                    <div class="download-btn">
+                        <a class="download-img" href="#" onclick="downloadImg(this)" download="my-img.jpg">
+                            <i class="fas fa-download fa-lg"></i>
+                            Download as jpeg
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- <img src="Screenshot_1.jpg" alt=""> -->
 
     <section class="about-section">
         <div class="about-container" id="about">
@@ -192,7 +205,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="contact"> 
+    <section class="contact">
         <div class="contact-container" id="contact">
             <div class="contact-head">
 
@@ -201,12 +214,11 @@
             </div>
             <div class="form">
 
-
-                <input type="text" placeholder="Name (Requierd)">
-                <input type="email" placeholder="Email (Requierd)">
-                <input type="text" placeholder="Subject">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <button class="send-btn">send</button>
+                <input type="text" placeholder="Name (Requierd)" class="name-input">
+                <input type="email" placeholder="Email (Requierd)" class="email-input">
+                <input type="text" placeholder="Subject" class="subject-input">
+                <textarea name="" id="" cols="30" rows="10" class="body-input"></textarea>
+                <button class="send-btn" onclick="sendEmail()">send</button>
             </div>
             <div class="address">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In blanditiis natus quia. Inventore aspernatur,
@@ -215,19 +227,21 @@
                 </p>
                 <p>street</p>
                 <p>
-                    <a href="tel:123455"></a>
+                    <a href="tel:123455">123456</a>
                 </p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-
+ 
+   
     <footer>
 
         <p>&copy; Copyright 2013</p>
 
     </footer>
+    
     <script src="js/utils.js"></script>
     <script src="js/upload-service.js"></script>
     <script src="js/service.js"></script>

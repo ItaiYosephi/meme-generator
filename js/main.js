@@ -59,6 +59,9 @@ function renderFilterList() {
 
 
 function onImgClick(id) {
+    document.querySelector('.share-container').innerHTML = '';
+    document.querySelector('.share-container').style.display = 'none';
+
     resetTxts()
     updateTxtBox();
     updateCurrImg(id)
@@ -204,23 +207,33 @@ function onToggleShadow(elVar) {
 
 function canvasClicked(ev) {
     console.log(ev);
-    var MousePos = getMousePos(elCanvas, ev);
+    
     // gMeme.txts[gCurrTxtIdx].pos.x = MousePos.x;
     // gMeme.txts[gCurrTxtIdx].pos.y = MousePos.y;
 
     renderCanvas();
 
+    var idx = findTxtIdxByMousePos(ev);
+    if (idx < 0 ) {
+        return;
+    } else {
+        gCurrTxtIdx = idx;
+        updateTxtBox(gMeme.txts[gCurrTxtIdx].line);
+        updateColorBox(gMeme.txts[gCurrTxtIdx].color); 
+
+    }
+
+
+}
+function findTxtIdxByMousePos(ev) {
+    var MousePos = getMousePos(elCanvas, ev);
     var idx = gMeme.txts.findIndex(function (txt) {
         var txtStr = txt.line;
         var metrics = ctx.measureText(txtStr);
         var width = metrics.width;
-        var txtHeight = parseInt(ctx.font);        
+        var txtHeight = parseInt(ctx.font);
         var startX;
-        console.log(MousePos.y);
-        console.log(txt.pos.y);
-        console.log(txt);
-        
-        
+
         switch (txt.align) {
             case 'left':
                 startX = txt.pos.x;
@@ -233,16 +246,12 @@ function canvasClicked(ev) {
                 brek;
 
         }
-        // debugger;
-        return (MousePos.x > startX && MousePos.x < startX + width && 
-            MousePos.y > txt.pos.y && MousePos.y < txt.pos.y + txtHeight)
+        return (MousePos.x > startX && MousePos.x < startX + width &&
+            MousePos.y < txt.pos.y && MousePos.y > txt.pos.y - txtHeight)
 
     })
-    console.log(idx);
-
-
+    return idx;
 }
-
 function getMousePos(canvas, ev) {
     var rect = canvas.getBoundingClientRect(), // abs. size of element
         scaleX = canvas.width / rect.width,    // relationship bitmap vs. element for X
@@ -288,7 +297,15 @@ function toggleMenu() {
 }
 
 function onFileInputChange(ev) {
+    // debugger;
     handleImageFromInput(ev)
     toggleView();
 
 }
+function sendEmail() {
+
+    var strEmail = document.querySelector('.email-input').value;
+    var strSubject = document.querySelector('.subject-input').value;
+    var strBody = document.querySelector('.body-input').value;
+    location.assign(`https://mail.google.com/mail/?view=cm&fs=1&to=${strEmail}&su=${strSubject}&body=${strBody}`)
+  }

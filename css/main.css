@@ -37,6 +37,7 @@ body {
 
 button {
     border: 0;
+    cursor: pointer;
 }
 
 h1,
@@ -56,6 +57,7 @@ a {
 .row {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .col-12 {
@@ -68,15 +70,16 @@ a {
     max-width: 25%;
 }
 
-/* .col-4 {
+.col-4 {
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
-} */
-
-.col-4 {
+}
+.col-6 {
     flex: 0 0 50%;
     max-width: 50%;
 }
+
+
 
 .col {
     flex-basis: 0;
@@ -307,6 +310,8 @@ header.menu-open {
     color: #e0fafe;
 }
 
+
+.share-container i,
 .download-btn i,
 .back-btn i {
     position: absolute;
@@ -417,9 +422,11 @@ select.font option {
 .row>*:not(:last-child) {
     border-right: 1px solid #757575;
 }
+
 input {
     max-width: 100%;
 }
+
 main {
     position: relative;
     margin-bottom: 30px;
@@ -626,11 +633,21 @@ footer {
     .contact-container .form {
         flex-basis: 100%;
     }
-    .send-btn { 
+    .send-btn {
         width: 100%
     }
-
-
+    .top-wrapper {
+        flex-wrap: wrap;
+    }
+    .search {
+        flex-basis: 100%;
+        order: -1;
+    }
+    .btn-file {
+        width: 100%;
+            flex-basis: 100%
+        
+    }
 }
 
 @media (max-width: 850px) {
@@ -648,11 +665,12 @@ footer {
     background-image: url('../img/searchicon.png');
     background-position: 10px center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 300px;
     font-size: 16px;
-    padding: 8px 20px 8px 40px;
+    padding: 10px 20px 10px 40px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
+    margin-left: 5px;
 }
 
 .gallery .hex:hover {
@@ -663,4 +681,55 @@ footer {
 .gallery .hex {
     transform: scale(0.9);
     transition: all 0.4s;
+}
+
+
+[hidden] {
+    display: none !important;
+  }
+
+  .btn-file {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-basis: 50px;
+
+  }
+.top-wrapper {
+    display: flex;
+    /* flex-wrap: nowrap; */
+    max-width: 1000px;
+    margin: 10px auto;
+    align-items: start;
+    justify-content: flex-start;
+    padding: 5px 10px;
+}
+
+.publish-btn, .share-container {
+    width: 100%;
+    background-color: #2db398;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #e0fafe;
+    margin-top: 10px;
+}
+.share-container a {
+    color: #e0fafe;
+
+
+}
+.share-container {
+    /* display: none; */
+}
+.action-btns {
+    width: 100%;
 }

@@ -214,7 +214,6 @@ function movePrevTxtIdx(){
     if(gCurrTxtIdx){
         gCurrTxtIdx --;
         updateTxtBox(gMeme.txts[gCurrTxtIdx].line);
-        console.log(gMeme.txts[gCurrTxtIdx].color)
         updateColorBox(gMeme.txts[gCurrTxtIdx].color);     
     } 
 }
@@ -262,7 +261,7 @@ function makeTxt() {
         size: 40,
         align: 'center',
         color: gColor,
-        font: gFont,
+        font: 'Impact',
         weight: 400,
         shadow: gShadow,
         pos: {

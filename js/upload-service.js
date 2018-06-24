@@ -1,17 +1,18 @@
 // on submit call to this function
 function uploadImg(elForm, ev) {
     ev.preventDefault();
-
-    document.getElementById('imgData').value = canvas.toDataURL("image/jpeg");
+    document.getElementById('imgData').value = elCanvas.toDataURL('image/jpeg');
    
     // A function to be called if request succeeds
     function onSuccess(uploadedImgUrl) {
         console.log('uploadedImgUrl', uploadedImgUrl);
 
         uploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        document.querySelector('.share-container').style.display = '';
+
         document.querySelector('.share-container').innerHTML = `
         <a class="w-inline-block social-share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}'); return false;">
-           Share   
+        <i class="fas fa-share-square fa-lg"></i>Share   
         </a>`
     }
 
@@ -42,7 +43,6 @@ function handleImageFromInput(ev) {
         updateGImg(event.target.result)        
     }
     reader.readAsDataURL(ev.target.files[0]);
-    toggleView();
 }
 
 
