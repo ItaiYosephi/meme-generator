@@ -42,6 +42,7 @@ function handleImageFromInput(ev) {
         updateGImg(event.target.result)        
     }
     reader.readAsDataURL(ev.target.files[0]);
+    toggleView();
 }
 
 

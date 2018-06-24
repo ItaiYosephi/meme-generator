@@ -70,7 +70,7 @@ function updateGImg(src) {
     ctx = elCanvas.getContext("2d");
     gImg = new Image()
     gImg.onload = function () {
-     renderCanvas()
+        renderCanvas()
 
     }
     gImg.src = src;
@@ -108,7 +108,7 @@ function renderTxts() {
     for (var i = 0; i < gMeme.txts.length; i++) {
         var currTxt = gMeme.txts[i];
         ctx.fillStyle = currTxt.color;
-        ctx.font = `${gMeme.txts[i].weight} ${gMeme.txts[i].size}px ${gMeme.txts[i].font}`;
+        ctx.font = `${gMeme.txts[i].weight} ${gMeme.txts[i].size}pt ${gMeme.txts[i].font}`;
         ctx.textAlign = gMeme.txts[i].align;
         // ctx.font = `${gMeme.txts[gCurrTxtIdx].weight} ${gMeme.txts[gCurrTxtIdx].size}px ${gMeme.txts[gCurrTxtIdx].font}`;
         // ctx.textAlign = gMeme.txts[gCurrTxtIdx].align;
@@ -196,7 +196,7 @@ function onChangeFont(elFont) {
     renderCanvas();
 }
 
-function onToggleShadow(elVar){
+function onToggleShadow(elVar) {
     toggleShadow(elVar);
     renderCanvas();
 }
@@ -205,9 +205,41 @@ function onToggleShadow(elVar){
 function canvasClicked(ev) {
     console.log(ev);
     var MousePos = getMousePos(elCanvas, ev);
-    gMeme.txts[gCurrTxtIdx].pos.x = MousePos.x;
-    gMeme.txts[gCurrTxtIdx].pos.y = MousePos.y;
+    // gMeme.txts[gCurrTxtIdx].pos.x = MousePos.x;
+    // gMeme.txts[gCurrTxtIdx].pos.y = MousePos.y;
+
     renderCanvas();
+
+    var idx = gMeme.txts.findIndex(function (txt) {
+        var txtStr = txt.line;
+        var metrics = ctx.measureText(txtStr);
+        var width = metrics.width;
+        var txtHeight = parseInt(ctx.font);        
+        var startX;
+        console.log(MousePos.y);
+        console.log(txt.pos.y);
+        console.log(txt);
+        
+        
+        switch (txt.align) {
+            case 'left':
+                startX = txt.pos.x;
+                break;
+            case 'center':
+                startX = txt.pos.x - width / 2;
+                break;
+            case 'right':
+                startX = txt.pos.x - width;
+                brek;
+
+        }
+        // debugger;
+        return (MousePos.x > startX && MousePos.x < startX + width && 
+            MousePos.y > txt.pos.y && MousePos.y < txt.pos.y + txtHeight)
+
+    })
+    console.log(idx);
+
 
 }
 
