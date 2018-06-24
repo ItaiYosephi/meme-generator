@@ -188,6 +188,11 @@ function onPrevLineTxt(){
     movePrevTxtIdx();
 }
 
+function onChangeFont(elFont){
+    changeFont(elFont);
+    renderCanvas();
+}
+
 
 
 function canvasClicked(ev) {

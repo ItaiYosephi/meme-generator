@@ -255,7 +255,7 @@ function makeTxt() {
         size: 40,
         align: 'center',
         color: document.querySelector('.color').value,
-        font: 'Arial',
+        font: document.querySelector('.change-font').value,
         weight: 400,
         pos: {
             x: elCanvas.width / 2,
@@ -285,6 +285,23 @@ function changeTxtAlign(align){
             gMeme.txts[gCurrTxtIdx].align = 'right';
             break;
     }
+
+}
+
+function changeFont(font){
+    console.log(font,'${font}')
+   gMeme.txts[gCurrTxtIdx].font = font;
+    // switch (font) {
+    //     case 'Impact':
+    //         gMeme.txts[gCurrTxtIdx].font = ';
+    //         break;
+    //     case 'down':
+    //         gMeme.txts[gCurrTxtIdx].font = ;
+    //         break;
+    //     case 'right':
+    //         gMeme.txts[gCurrTxtIdx].font = ;
+    //         break;
+    // }
 
 }
 
